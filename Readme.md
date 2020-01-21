@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Лилия](https://up.htmlacademy.ru/htmlcss/27/user/1339483).
-* Наставник: `Неизвестно`.
+* Наставник: [Владислав Балабанович] (https://htmlacademy.ru/profile/balabanovich).
 
 ---
 
