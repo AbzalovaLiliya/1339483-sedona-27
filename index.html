@@ -91,13 +91,45 @@
     <h2>Заинтересовались?</h2>
     <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
     <button type="button">Поиск гостиницы в Седоне</button>
+    <!-- Здесь будет форма которая раскрывается по нажатию на кнопку "Поиск гостиницы в Седоне"-->
+    <!-- как сделать чтобы выпадала?-->
     <section>
-      <!-- Здесь будет форма -->
+      <h2>Поиск гостиницы в Седоне</h2>
+      <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="arrival-date">Дата заезда</label>
+          <input id="arrival-date" type="date" name="date" value="2020-10-10">
+        </p>
+        <p>
+          <label for="leave-date">Дата выезда</label>
+          <input id="leave-date" type="date" name="date" value="2020-10-15">
+        </p>
+        <p>
+          <!-- действия кнопок + и - видимо будет в js-->
+        <div class="">
+          <label for="adults_number">Взрослые</label>
+          <span class="minus">-</span>
+          <input id="adults_number" name="adults" type="text" value="1" size="5"/>
+          <span class="plus">+</span>
+        </div>
+        </p>
+        <p>
+          <!-- действия кнопок + и - видимо будет в js-->
+        <div class="">
+          <label for="children_number">Дети</label>
+          <span class="minus">-</span>
+          <input id="children_number" name="children" type="text" value="1" size="5"/>
+          <span class="plus">+</span>
+        </div>
+        </p>
+        <button type="submit">Найти</button>
+      </form>
     </section>
   </section>
   <section>
     <h2>Карта</h2>
-    <!-- Здесь будет форма -->
+    <!-- Здесь будет форма с изображением карты-->
   </section>
 </main>
 
