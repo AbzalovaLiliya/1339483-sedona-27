@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <!--<link rel="stylesheet" href="css/style.css">-->
+  <link rel="stylesheet" href="css/style.css">
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
 </head>
@@ -20,7 +20,7 @@
   </nav>
 </header>
 <main>
-  <h1>Седона</h1>
+  <h1 class="visually-hidden">Седона</h1>
   <section>
     <!-- большая картинка будет в css как background-image background_photo + intro_mask.svg внизу-->
     <img src="img/intro-welcome.svg" width="459" height="353" alt="Добро пожаловать в Седону">
@@ -31,7 +31,7 @@
   </section>
   <!-- Блок "Преимущества" -->
   <section>
-    <h2>Преимущества</h2>
+    <h2 class="visually-hidden">Преимущества</h2>
     <!-- Блок "Настоящий городок" -->
     <section>
       <h3>Настоящий городок</h3>
@@ -91,11 +91,11 @@
     <h2>Заинтересовались?</h2>
     <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
     <button type="button">Поиск гостиницы в Седоне</button>
-    <!-- Здесь будет форма которая раскрывается по нажатию на кнопку "Поиск гостиницы в Седоне"-->
-    <!-- как сделать чтобы выпадала?-->
+    <!-- Здесь форма которая раскрывается по нажатию на кнопку "Поиск гостиницы в Седоне"-->
+    <!-- как сделать чтобы выпадала? гуглить как сделать модальное окно?  иначе на данный момент кнопка отдельно от формы
+    -->
     <section>
       <h2>Поиск гостиницы в Седоне</h2>
-      <p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
       <form action="https://echo.htmlacademy.ru" method="post">
         <p>
           <label for="arrival-date">Дата заезда</label>
