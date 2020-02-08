@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="css/style.css">
   <meta charset="utf-8">
   <title>HTML Academy: Седона</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<header>
-  <nav>
-    <a>
-      <img src="img/logo-sedona.svg" width="368" height="153" alt="Логотип Седона">
+<header class="main-header">
+  <nav class="main-navigation">
+    <a class="main-header-logo">
+      <img src="img/logo-sedona.svg" width="140" height="71" alt="Логотип Седона">
     </a>
-    <ul>
+    <ul class="site-navigation">
       <li><a href="info.html">Информация</a></li>
       <li><a href="foto.html">Фото и видео</a></li>
       <li><a href="map.html">Карта штата</a></li>
@@ -19,136 +21,150 @@
     </ul>
   </nav>
 </header>
-<main>
+<main class="container">
   <h1 class="visually-hidden">Седона</h1>
-  <section>
+  <section class="intro-welcome">
     <!-- большая картинка будет в css как background-image background_photo + intro_mask.svg внизу-->
     <img src="img/intro-welcome.svg" width="459" height="353" alt="Добро пожаловать в Седону">
+    <div class="intro-mask"></div>
   </section>
-  <section>
-    <h2>Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
-    <p class="">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+  <section class="intro">
+    <h2 class="intro-heading">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
+    <p class="intro-subheading">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
   </section>
   <!-- Блок "Преимущества" -->
-  <section>
+  <section class="features">
     <h2 class="visually-hidden">Преимущества</h2>
-    <!-- Блок "Настоящий городок" -->
-    <section>
-      <h3>Настоящий городок</h3>
-      <p>— №1 —</p>
-      <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
-      <div>
-        <img src="img/real_city.jpg" width="800" height="256" alt="Картинка вида города">
-      </div>
-    </section>
-    <!-- общий блок Жилье, Еда и Сувениры-->
-    <section>
-      <section>
-        <img src="img/icon-1.svg" width="75" height="72" alt="Картинка домика">
-        <h3>Жильё</h3>
-        <p>Рекомендуем пожить в настоящем мотеле, <br> всё как в кино!</p>
-      </section>
-      <section>
-        <img src="img/icon-3.svg" width="74" height="70" alt="Картинка бургера">
-        <h3>Еда</h3>
-        <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-      </section>
-      <section>
-        <img src="img/icon-2.svg" width="64" height="76" alt="Картинка подарочной упаковки">
-        <h3>Сувениры</h3>
-        <p>Не только китайского, но и местного производства!</p>
-      </section>
-    </section>
-    <!-- Блок "Мост дъявола" -->
-    <section>
-      <div>
-        <img src="img/devils_bridge.jpg" width="800" height="256" alt="Картинка моста дъявола">
-      </div>
-      <h3>Там есть <br> Мост дьявола</h3>
-      <p>— №2 —</p>
-      <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-    </section>
-    <!-- общий блок Площадь, Дороги, Туристы-->
-    <section>
-      <section>
-        <h3>Небольшая площадь</h3>
-        <p>— №3 —</p>
-        <p>Все достопримечательности находятся очень близко</p>
-      </section>
-      <section>
-        <h3>Красивая дорога</h3>
-        <p>— №4 —</p>
-        <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-      </section>
-      <section>
-        <h3>Мало туристов</h3>
-        <p>— №5 —</p>
-        <p>Большинство едет в гранд каньон и толпится там</p>
-      </section>
-    </section>
+    <ul class="features-list">
+      <!-- Блок "Настоящий городок" -->
+      <li class="feature-item">
+        <section>
+          <div class="feature-item-blue">
+            <h3>Настоящий городок</h3>
+            <p>— №1 —</p>
+            <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+          </div>
+          <div>
+            <img src="img/real-city.jpg" width="800" height="256" alt="Картинка вида города">
+          </div>
+        </section>
+      </li>
+      <!-- общий блок Жилье, Еда и Сувениры-->
+      <li class="feature-item">
+        <section>
+          <section>
+            <img src="img/icon-1.svg" width="75" height="72" alt="Картинка домика">
+            <h3>Жильё</h3>
+            <p>Рекомендуем пожить в настоящем мотеле, <br> всё как в кино!</p>
+          </section>
+          <section>
+            <img src="img/icon-3.svg" width="74" height="70" alt="Картинка бургера">
+            <h3>Еда</h3>
+            <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          </section>
+          <section>
+            <img src="img/icon-2.svg" width="64" height="76" alt="Картинка подарочной упаковки">
+            <h3>Сувениры</h3>
+            <p>Не только китайского, но и местного производства!</p>
+          </section>
+        </section>
+      </li>
+      <!-- Блок "Мост дъявола" -->
+      <li class="feature-item">
+        <section>
+          <div>
+            <img src="img/devils-bridge.jpg" width="800" height="256" alt="Картинка моста дъявола">
+          </div>
+          <div class="feature-item-blue">
+            <h3>Там есть <br> Мост дьявола</h3>
+            <p>— №2 —</p>
+            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          </div>
+        </section>
+      </li>
+      <!-- общий блок Площадь, Дороги, Туристы-->
+      <li class="feature-item">
+        <section class="feature-item-gray">
+          <section>
+            <h3>Небольшая площадь</h3>
+            <p>— №3 —</p>
+            <p>Все достопримечательности находятся очень близко</p>
+          </section>
+          <section>
+            <h3>Красивая дорога</h3>
+            <p>— №4 —</p>
+            <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          </section>
+          <section>
+            <h3>Мало туристов</h3>
+            <p>— №5 —</p>
+            <p>Большинство едет в гранд каньон и толпится там</p>
+          </section>
+        </section>
+      </li>
+    </ul>
   </section>
-  <section>
+  <section class="interested-in">
     <h2>Заинтересовались?</h2>
     <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
-    <button type="button">Поиск гостиницы в Седоне</button>
+
     <!-- Здесь форма которая раскрывается по нажатию на кнопку "Поиск гостиницы в Седоне"-->
-    <!-- как сделать чтобы выпадала? гуглить как сделать модальное окно?  иначе на данный момент кнопка отдельно от формы
+    <!-- ВОПРОС: как сделать чтобы выпадала? гуглить как сделать модальное окно?  иначе на данный момент кнопка отдельно от формы???
     -->
-    <section>
-      <h2>Поиск гостиницы в Седоне</h2>
-      <form action="https://echo.htmlacademy.ru" method="post">
+    <section class="search">
+      <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+      <button type="button" class="button-search button-brown">Поиск гостиницы в Седоне</button>
+      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
         <p>
           <label for="arrival-date">Дата заезда</label>
-          <input id="arrival-date" type="date" name="date" value="2020-10-10">
+          <!-- какой-то стиль перекрыл даты, пока не нашла в чем дело-->
+          <input type="date" id="arrival-date" name="arrival-date" value="2014-12-12">
+
         </p>
         <p>
           <label for="leave-date">Дата выезда</label>
-          <input id="leave-date" type="date" name="date" value="2020-10-15">
+          <input id="leave-date" type="date" name="leave-date" value="">
         </p>
         <p>
-          <!-- действия кнопок + и - видимо будет в js-->
-        <div class="">
-          <label for="adults_number">Взрослые</label>
-          <span class="minus">-</span>
-          <input id="adults_number" name="adults" type="text" value="1" size="5"/>
-          <span class="plus">+</span>
+          <label for="adults-number">Взрослые</label>
+        <div class="div-plus-minus">
+          <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+          <input id="adults-number" name="adults" type="text" value="1" size="5"/>
+          <button type="button" class="button-plus-minus">+</button><!-- "+" -->
         </div>
         </p>
         <p>
-          <!-- действия кнопок + и - видимо будет в js-->
-        <div class="">
-          <label for="children_number">Дети</label>
-          <span class="minus">-</span>
-          <input id="children_number" name="children" type="text" value="1" size="5"/>
-          <span class="plus">+</span>
+          <label for="children-number">Дети</label>
+        <div class="div-plus-minus">
+          <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+          <input id="children-number" name="children" type="text" value="1" size="5"/>
+          <button type="button" class="button-plus-minus">+</button><!-- "+" -->
         </div>
         </p>
-        <button type="submit">Найти</button>
+        <button type="submit" class="button-search-submit button-blue">Найти</button>
       </form>
     </section>
   </section>
-  <section>
-    <h2>Карта</h2>
+  <section class="modal-map">
+    <h2 class="visually-hidden">Карта</h2>
     <!-- Здесь будет форма с изображением карты-->
   </section>
 </main>
 
-<footer>
-  <div>
-    <p> #VISITSEDONA </p>
-    <p> Тел: +7(495) 666-02-66 </p>
+<footer class="main-footer">
+  <div class="footer-contacts">
+    <p>#VISITSEDONA </p>
+    <p>Тел: +7(495) 666-02-66 </p>
   </div>
-  <div>
+  <div class="footer-social">
     <p>Мы в соцсетях</p>
     <ul>
-      <li><a href="#">Твиттер</a></li>
-      <li><a href="#">Фейсбук</a></li>
-      <li><a href="#">Инстаграм</a></li>
+      <li><a class="social-button" href="#">Твиттер</a></li>
+      <li><a class="social-button" href="#">Фейсбук</a></li>
+      <li><a class="social-button" href="#">Инстаграм</a></li>
     </ul>
   </div>
-  <p>
-    Website by
-    <a href="https://htmlacademy.ru">HTML Academy</a>
+  <p class="footer-copyright">Website by <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
   </p>
 </footer>
 </body>
