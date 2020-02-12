@@ -15,11 +15,26 @@ body {
 
 }
 
-a {
-  text-decoration: none;
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.main-header {
+  width: 1200px;
+  height: 56px;
+  margin: 0 auto;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .main-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   font-size: 14px;
   line-height: 26px;
   color: #000000;
@@ -27,12 +42,37 @@ a {
   background-color: #ffffff;
 }
 
-.site-navigation {
-  list-style: none;
+.main-header-logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
+  width: 140px;
+  height: 71px;
+  /* order:2;*/
+  /*Вопрос: нужно ли у логотипа указывать высоту и ширину блока который он занимает?*/
+
 }
 
-.site-navigation a {
-  color: #000000;
+/*Вопрос: как сделать чтобы при занимании нав.ссылок по шапке, картинка учитывалась?
+размеры блоков с меню 4 шт по 239px/56px
+а блок где логотип = 244px/56px
+
+может задать каждому li свой размер, и логотип добавить внутрь li?
+*/
+
+.site-navigation {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  /*как текст по двум углам распределить?*/
+  /*align-items: center;*/
+  /* text-align: center;*/
+}
+
+.site-navigation > li {
+  flex-grow: 1;
 }
 
 .site-navigation a:hover,
@@ -44,42 +84,107 @@ a {
   color: #cacaca;
 }
 
+.nav-item {
+  color: #000000;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .intro-welcome {
   position: relative;
   width: 1200px;
-  height: 507px;
+  height: 509px;
   background-color: #f2f2f2;
   background-image: url("../img/background-photo.jpg");
-
   background-position: top center;
+
+  /*box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;*/
 }
 
-.intro-mask {
+.welcome-image {
   position: relative;
-  width: 1203px;
-  height: 59px;
-  background-color: #f2f2f2;
-  background-image: url("../img/intro-mask.svg");
-
-  background-position: top center;
+  left: 50%;
+  margin-left: -229.5px;
+  margin-top: 77px;
 }
 
+/*Вопрос: как прижать к низу картинку? bottom:-2px; так можно?*/
+.intro-mask {
+  position: absolute;
+  width: 1200px;
+  height: 59px;
+  background: transparent;
+  background-image: url("../img/intro-mask.svg"); /*url("../img/polygon.png"); */
+  bottom: -2px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+/*Вопрос: между предыдущим блоком и этим дырка, почему она образуется, как исправлять ? можно пользоваться top:-17px;? */
 .intro {
+  position: relative;
+  width: 1200px;
+  height: 216px;
   text-align: center;
   line-height: 26px;
   background-color: #ffffff;
 }
 
+.intro-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
 .intro-heading {
+  width: 440px;
+  height: 48px;
   font-size: 21px;
   font-weight: 700;
-  color: #000000
+  color: #000000;
+
+  /*Вопрос: как сделать чтобы текст перешел на другую строку? размерами блок ограничен и судя по макету текст должен был перейти*/
+
+  /* word-wrap: break-word;
+   white-space: normal;*/
 }
 
 .intro-subheading {
+  width: 489px;
+  height: 13px;
   font-size: 14px;
   font-weight: 400;
   color: #333333
+}
+
+/*Вопрос: почему блок не встает на всю ширину как встала картинка выше нее?*/
+.features {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+
+  /*margin-left: auto;
+  margin-right: auto;*/
 }
 
 .features-list {
@@ -87,10 +192,17 @@ a {
 }
 
 .feature-item {
+  position: relative;
   text-align: center;
   text-transform: uppercase;
   color: #000000;
   background-color: #ffffff;
+
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+
 }
 
 .feature-item h3 {
@@ -110,8 +222,25 @@ a {
   background-color: #81b3d2;
 }
 
+.features-item-block {
+  position: relative;
+  width: 400px;
+  height: 256px;
+  /*Вопрос: центрирование текста ?*/
+}
+
+.features-item-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .feature-item-gray {
   background-color: #eeeeee;
+  /*display:flex;*/
 }
 
 
@@ -182,13 +311,26 @@ a {
   background-color: #5496bd;
 }
 
+/*ВОПРОС: дата заезда, дата выезда и строка с кол-ом детей и взрослых,
+это отдельный блок внутри формы с display:flex и все три строки рассматривать
+как отдельные элементы которые распологать в одинаковом расстоянии друг от друга?, */
+
+.search {
+  position: relative;
+}
+
 .search-form {
   color: #000000;
   background-color: #ffffff;
-
+  position: absolute;
+  width: 568px;
+  height: 395px;
+  box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
+  left: 50%;
+  margin-left: -284px;
+  top: 100%;
+  /*display: none;*/
 }
-
-.search {}
 
 .search-form label {
   font-family: "PT Sans", sans-serif;
@@ -197,25 +339,53 @@ a {
   font-weight: 700;
 }
 
-.search-form input {
-  background: #f2f2f2;
-  font: inherit;
-  border: #000000;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
+.search-form p {
+  position: relative;
 }
-#arrival-date{
-  background: #f2f2f2;
-  font: inherit;
-  border: #000000;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
 
+.search-form-input-arrival {
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  width: 346px;
+  height: 38px;
+
+  top: 55px;
+  right: 55px;
 }
+
+.search-form-input-leave {
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  width: 346px;
+  height: 38px;
+
+  top: 122px;
+  right: 55px;
+}
+
+/*Вопрос: как правльно указать расположение календариков? поле ввода сделать блоком
+и внутри картинку, или можно календарики сделать position:absolute?*/
+.search-form-button {
+  z-index: 2;
+  position: relative;
+  /*right: 35px;*/
+  top: 50%;
+  bottom: -19px;
+  background: transparent;
+  border: none;
+}
+
+
 .div-plus-minus {
   background: #f2f2f2;
 }
@@ -226,6 +396,9 @@ a {
   font-size: 14px;
   line-height: 26px;
   color: #a9a9a9;
+}
+
+.modal-map {
 
 }
 
@@ -265,59 +438,74 @@ a {
   background-color: #ffffff;
 }
 
-/**кнопки двух видов сделать голубые и коричневые/
-/*
-.button:hover,
-.button:focus,
-.button:active {
-  background-color: #663d15;
-}*/
+/*hotels.html*/
 
-/*
-  background-color: #000000;
-  background-image: url("img/bg.jpg");
-  background-position: top center;
-  background-repeat: no-repeat;
-*/
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-a.nav-current {
+.nav-current {
   color: #766357;
 }
 
 .search-section {
+  position: relative;
+  width: 1200px;
+  height: 217px;
+
   background: #766357;
   background: url("../img/filter-background.jpg");
-  background-size: 1200px 800px;
+  background-position: top center;
+  top: -15px;
+  /*Вопрос: Картинка выглядит не совсем так как на макете, она будто поднята или отображается не с самого начала по высоте*/
+  /*background-size: 1200px 800px;*/
+
   background-repeat: no-repeat;
   color: #ffffff;
-  text-transform: uppercase
+  text-transform: uppercase;
+}
+
+.filters-form {
+  position: relative; /*Вопрос:а оно тут нужно??*/
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.first-part-filters {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /*!! Не отцентрировалось!*/
+  flex-direction: row;
+  width: 600px;
 
 
 }
 
-.filter-infrastructure-list {
-  list-style: none;
-}
+.filter-infrastructure {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
 
-.filter-accommodation-list {
-  list-style: none;
 }
 
 .filter-infrastructure h3 {
   font-size: 16px;
   line-height: 21px;
   font-weight: 700;
+}
+
+.filter-infrastructure-list {
+  list-style: none;
+}
+
+.filter-accommodation {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.filter-accommodation-list {
+  list-style: none;
 }
 
 .filter-accommodation .filter-infrastructure-list {
@@ -330,6 +518,7 @@ a.nav-current {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  width: 600px;
 }
 
 .filter-cost h3 {
@@ -338,9 +527,7 @@ a.nav-current {
   font-weight: 700;
 }
 
-
 .button-show-hotels {
-
   border: 2px solid #ffffff;
   font-size: 14px;
   line-height: 21px;
@@ -360,8 +547,8 @@ a.nav-current {
   color: #000
 }
 
-/* Customize the label (the container) */
-.container {
+/* Customize the label (the checkbox) */
+.checkbox {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -378,7 +565,7 @@ a.nav-current {
 }
 
 /*Hide the browser's default checkbox */
-.container input {
+.checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -406,12 +593,12 @@ a.nav-current {
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.checkbox .checkmark:after {
   left: 10px;
   top: -4px;
   width: 7px;
@@ -423,9 +610,18 @@ a.nav-current {
   transform: rotate(45deg);
 }
 
-/* TODO: не хватает эффектов когда чекбокс заблокирован*/
+/* Вопрос: или здесь в sort-results сделать два больших блока? в первой половине текст, во второй в конце треугольники?*/
 
 .sort-results {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  height: 86px;
+  background-color: #fefefe;
+
+  top: -15px;
 }
 
 .sort-results h3 {
@@ -438,6 +634,7 @@ a.nav-current {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
+
 }
 
 .sort-buttons {
@@ -451,8 +648,13 @@ a.nav-current {
   border: 0;
   border-bottom: 1px dotted #8bb9d5;
   color: #d2d2d2;
+  background-color: transparent;
 }
 
+.button-sort-active {
+  color: #8bb9d5;
+  border-bottom: none;
+}
 
 .sort-buttons button:hover,
 .sort-buttons button:focus {
@@ -470,19 +672,47 @@ a.nav-current {
   border: 0;
 }
 
-.button-up {
+a.arrow {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0;
 }
 
-.button-down {
+.arrow::before {
+  display: inline-block;
+  border: 11px solid #cacaca;
+  border-right-width: 5px;
+  border-right-color: transparent;
+  border-left-width: 5px;
+  border-left-color: transparent;
+  content: "";
 }
 
-.up-down-buttons button:hover,
-.up-down-buttons button:focus {
-
+.button-up::before {
+  border-top-width: 0;
 }
 
-.up-down-buttons button:active {
+.button-down::before {
+  border-bottom-width: 0;
+}
 
+/*Вопрос: одна из кнопок Активная, она должна быть голубого цвета,
+сразу нужно рисовать треугольник правильного цвета или можно переопределить цвет нарисованного треуг.?*/
+
+.button-up-active {
+}
+
+/*Как правильно менять цвет треугольникам?*/
+.button-up:hover,
+.button-up:focus,
+.button-down:hover,
+.button-down:focus {
+  color: #000000;
+}
+
+.button-up:active,
+.button-down:active {
+  color: #81b3d2;
 }
 
 .button-details {
@@ -510,6 +740,36 @@ a.nav-current {
 .find-results {
   color: #000000;
   background-color: #fefefe;
+
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 540px;
+
+  top: -15px;
+
+}
+
+.hotel-section {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+
+  height: 180px;
+  width: 1200px;
+
+  border-top: 1px solid #e5e5e5;
+
+  padding-left: 72px;
+
+}
+
+.hotel-description {
+  padding-left: 30px;
 }
 
 .find-results h2 {
@@ -529,22 +789,26 @@ a.nav-current {
   height: 90px;
 }
 
+/*ВОПРОС: как прибить к правому краю? разделить секцию hotel-section на два больших?
+абсолютным позиционированием можно задать расположение?*/
+.rating-section {
+}
+
 .rating {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  padding-right: 73px;
+  justify-content: flex-end;
+
 }
 
 /*расположить звезды горизонтально*/
-.stars-amara {
+.stars-rating span {
+  background: url("../img/star.svg");
+  width: 18px;
+  height: 17px;
 }
-
-.stars-desert {
-}
-
-.stars-villas {
-}
-
 
 
 .hotels-link {

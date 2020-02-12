@@ -8,164 +8,180 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<header class="main-header">
-  <nav class="main-navigation">
-    <a class="main-header-logo">
-      <img src="img/logo-sedona.svg" width="140" height="71" alt="Логотип Седона">
-    </a>
-    <ul class="site-navigation">
-      <li><a href="info.html">Информация</a></li>
-      <li><a href="foto.html">Фото и видео</a></li>
-      <li><a href="map.html">Карта штата</a></li>
-      <li><a href="hotels.html">Гостиницы</a></li>
-    </ul>
-  </nav>
-</header>
-<main class="container">
-  <h1 class="visually-hidden">Седона</h1>
-  <section class="intro-welcome">
-    <!-- большая картинка будет в css как background-image background_photo + intro_mask.svg внизу-->
-    <img src="img/intro-welcome.svg" width="459" height="353" alt="Добро пожаловать в Седону">
-    <div class="intro-mask"></div>
-  </section>
-  <section class="intro">
-    <h2 class="intro-heading">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
-    <p class="intro-subheading">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
-  </section>
-  <!-- Блок "Преимущества" -->
-  <section class="features">
-    <h2 class="visually-hidden">Преимущества</h2>
-    <ul class="features-list">
-      <!-- Блок "Настоящий городок" -->
-      <li class="feature-item">
-        <section>
-          <div class="feature-item-blue">
-            <h3>Настоящий городок</h3>
-            <p>— №1 —</p>
-            <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="main-navigation">
+      <a class="main-header-logo">
+        <img src="img/logo-sedona.svg" width="140" height="71" alt="Логотип Седона">
+      </a>
+      <ul class="site-navigation">
+        <li><a href="info.html" class="nav-item">Информация</a></li>
+        <li><a href="foto.html" class="nav-item">Фото и видео</a></li>
+        <li><a href="map.html" class="nav-item">Карта штата</a></li>
+        <li><a href="hotels.html" class="nav-item">Гостиницы</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <h1 class="visually-hidden">Седона</h1>
+    <section class="intro-welcome">
+      <img src="img/intro-welcome.svg" class="welcome-image" width="459" height="353" alt="Добро пожаловать в Седону">
+      <div class="intro-mask"></div>
+    </section>
+    <section class="intro">
+      <div class="intro-center">
+        <h2 class="intro-heading">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
+        <p class="intro-subheading">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+      </div>
+    </section>
+    <!-- Блок "Преимущества" -->
+    <section class="features">
+      <h2 class="visually-hidden">Преимущества</h2>
+      <ul class="features-list">
+        <!-- Блок "Настоящий городок" -->
+        <li class="feature-item">
+          <div class="features-item-block feature-item-blue">
+            <div class="features-item-center">
+              <h3>Настоящий городок</h3>
+              <p>— №1 —</p>
+              <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
+            </div>
           </div>
           <div>
             <img src="img/real-city.jpg" width="800" height="256" alt="Картинка вида города">
           </div>
-        </section>
-      </li>
-      <!-- общий блок Жилье, Еда и Сувениры-->
-      <li class="feature-item">
-        <section>
-          <section>
-            <img src="img/icon-1.svg" width="75" height="72" alt="Картинка домика">
-            <h3>Жильё</h3>
-            <p>Рекомендуем пожить в настоящем мотеле, <br> всё как в кино!</p>
+        </li>
+        <!-- общий блок Жилье, Еда и Сувениры-->
+        <li class="feature-item">
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <img src="img/icon-1.svg" width="75" height="72" alt="Картинка домика">
+              <h3>Жильё</h3>
+              <!-- ВОПРОС: как ширину и высоту текста правильно здесь контрольровать? можно ли здесь делать <p style="width: 284px; height: 35px">-->
+              <p>Рекомендуем пожить в настоящем мотеле,<br>всё как в кино!</p>
+            </div>
           </section>
-          <section>
-            <img src="img/icon-3.svg" width="74" height="70" alt="Картинка бургера">
-            <h3>Еда</h3>
-            <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <img src="img/icon-3.svg" width="74" height="70" alt="Картинка бургера">
+              <h3>Еда</h3>
+              <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+            </div>
           </section>
-          <section>
-            <img src="img/icon-2.svg" width="64" height="76" alt="Картинка подарочной упаковки">
-            <h3>Сувениры</h3>
-            <p>Не только китайского, но и местного производства!</p>
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <img src="img/icon-2.svg" width="64" height="76" alt="Картинка подарочной упаковки">
+              <h3>Сувениры</h3>
+              <p>Не только китайского, но и местного производства!</p>
+            </div>
           </section>
-        </section>
-      </li>
-      <!-- Блок "Мост дъявола" -->
-      <li class="feature-item">
-        <section>
+
+        </li>
+        <!-- Блок "Мост дъявола" -->
+        <li class="feature-item">
           <div>
             <img src="img/devils-bridge.jpg" width="800" height="256" alt="Картинка моста дъявола">
           </div>
-          <div class="feature-item-blue">
-            <h3>Там есть <br> Мост дьявола</h3>
-            <p>— №2 —</p>
-            <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          <div class="features-item-block feature-item-blue">
+            <div class="features-item-center">
+              <h3>Там есть <br> Мост дьявола</h3>
+              <p>— №2 —</p>
+              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+            </div>
           </div>
-        </section>
-      </li>
-      <!-- общий блок Площадь, Дороги, Туристы-->
-      <li class="feature-item">
-        <section class="feature-item-gray">
-          <section>
-            <h3>Небольшая площадь</h3>
-            <p>— №3 —</p>
-            <p>Все достопримечательности находятся очень близко</p>
-          </section>
-          <section>
-            <h3>Красивая дорога</h3>
-            <p>— №4 —</p>
-            <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-          </section>
-          <section>
-            <h3>Мало туристов</h3>
-            <p>— №5 —</p>
-            <p>Большинство едет в гранд каньон и толпится там</p>
-          </section>
-        </section>
-      </li>
-    </ul>
-  </section>
-  <section class="interested-in">
-    <h2>Заинтересовались?</h2>
-    <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
 
-    <!-- Здесь форма которая раскрывается по нажатию на кнопку "Поиск гостиницы в Седоне"-->
-    <!-- ВОПРОС: как сделать чтобы выпадала? гуглить как сделать модальное окно?  иначе на данный момент кнопка отдельно от формы???
-    -->
-    <section class="search">
-      <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
-      <button type="button" class="button-search button-brown">Поиск гостиницы в Седоне</button>
-      <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
-        <p>
-          <label for="arrival-date">Дата заезда</label>
-          <!-- какой-то стиль перекрыл даты, пока не нашла в чем дело-->
-          <input type="date" id="arrival-date" name="arrival-date" value="2014-12-12">
-
-        </p>
-        <p>
-          <label for="leave-date">Дата выезда</label>
-          <input id="leave-date" type="date" name="leave-date" value="">
-        </p>
-        <p>
-          <label for="adults-number">Взрослые</label>
-        <div class="div-plus-minus">
-          <button type="button" class="button-plus-minus">-</button><!-- "-" -->
-          <input id="adults-number" name="adults" type="text" value="1" size="5"/>
-          <button type="button" class="button-plus-minus">+</button><!-- "+" -->
-        </div>
-        </p>
-        <p>
-          <label for="children-number">Дети</label>
-        <div class="div-plus-minus">
-          <button type="button" class="button-plus-minus">-</button><!-- "-" -->
-          <input id="children-number" name="children" type="text" value="1" size="5"/>
-          <button type="button" class="button-plus-minus">+</button><!-- "+" -->
-        </div>
-        </p>
-        <button type="submit" class="button-search-submit button-blue">Найти</button>
-      </form>
+        </li>
+        <!-- общий блок Площадь, Дороги, Туристы-->
+        <li class="feature-item feature-item-gray">
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <h3>Небольшая площадь</h3>
+              <p>— №3 —</p>
+              <p>Все достопримечательности находятся очень близко</p>
+            </div>
+          </section>
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <h3>Красивая дорога</h3>
+              <p>— №4 —</p>
+              <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+            </div>
+          </section>
+          <section class="features-item-block">
+            <div class="features-item-center">
+              <h3>Мало туристов</h3>
+              <p>— №5 —</p>
+              <p>Большинство едет в гранд каньон и толпится там</p>
+            </div>
+          </section>
+        </li>
+      </ul>
     </section>
-  </section>
-  <section class="modal-map">
-    <h2 class="visually-hidden">Карта</h2>
-    <!-- Здесь будет форма с изображением карты-->
-  </section>
-</main>
+    <section class="interested-in">
+      <h2>Заинтересовались?</h2>
+      <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
+      <section class="search">
+        <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+        <button type="button" class="button-search button-brown">Поиск гостиницы в Седоне</button>
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
 
-<footer class="main-footer">
-  <div class="footer-contacts">
-    <p>#VISITSEDONA </p>
-    <p>Тел: +7(495) 666-02-66 </p>
-  </div>
-  <div class="footer-social">
-    <p>Мы в соцсетях</p>
-    <ul>
-      <li><a class="social-button" href="#">Твиттер</a></li>
-      <li><a class="social-button" href="#">Фейсбук</a></li>
-      <li><a class="social-button" href="#">Инстаграм</a></li>
-    </ul>
-  </div>
-  <p class="footer-copyright">Website by <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
-  </p>
-</footer>
+          <p>
+            <label for="arrival-date">Дата заезда</label>
+            <input type="text" class="search-form-input-arrival" id="arrival-date" name="arrival-date"
+                   value="24 АПРЕЛЯ 2017">
+            <button type="button" class="search-form-button">
+              <img src="img/calendar.png" width="21" height="22" alt="Кнопка для просмотра и выбора даты с календаря">
+            </button>
+          </p>
+          <p>
+            <label for="leave-date">Дата выезда</label>
+            <input type="text" class="search-form-input-leave" id="leave-date" name="leave-date" value="4 ИЮЛЯ 2017">
+            <button type="button" class="search-form-button">
+              <img src="img/calendar.png" width="21" height="22" alt="Кнопка для просмотра и выбора даты с календаря">
+            </button>
+          </p>
+          <!--ВОПРОС: почему в данном месте нельзя обернуть в тег р ? валидатор ругается -->
+          <label for="adults-number">Взрослые</label>
+          <div class="div-plus-minus">
+            <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+            <input id="adults-number" name="adults" type="text" value="1" size="5"/>
+            <button type="button" class="button-plus-minus">+</button><!-- "+" -->
+          </div>
+
+          <!--ВОПРОС: почему в данном месте нельзя обернуть в тег р ? валидатор ругается -->
+          <label for="children-number">Дети</label>
+          <div class="div-plus-minus">
+            <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+            <input id="children-number" name="children" type="text" value="1" size="5"/>
+            <button type="button" class="button-plus-minus">+</button><!-- "+" -->
+          </div>
+
+          <button type="submit" class="button-search-submit button-blue">Найти</button>
+
+        </form>
+      </section>
+    </section>
+    <section class="modal-map">
+      <h2 class="visually-hidden">Карта</h2>
+      <img src="img/map.png" width="1200" height="473" alt="Картинка карты, где отмечено расположение города Седона">
+    </section>
+  </main>
+  <footer class="main-footer">
+    <div class="footer-contacts">
+      <p>#VISITSEDONA </p>
+      <p>Тел: +7(495) 666-02-66 </p>
+    </div>
+    <div class="footer-social">
+      <p>Мы в соцсетях</p>
+      <ul>
+        <li><a class="social-button" href="#">Твиттер</a></li>
+        <li><a class="social-button" href="#">Фейсбук</a></li>
+        <li><a class="social-button" href="#">Инстаграм</a></li>
+      </ul>
+    </div>
+    <p class="footer-copyright">Website by <a class="button" href="https://htmlacademy.ru">HTML Academy</a>
+    </p>
+  </footer>
+</div>
 </body>
 </html>
