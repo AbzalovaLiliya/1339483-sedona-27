@@ -1,8 +1,9 @@
 body {
+  min-width: 1200px;
   margin: 0;
   padding: 0;
 
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
@@ -11,9 +12,51 @@ body {
 
   background-color: #f2f2f2;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
-  position: relative;
-
 }
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  box-sixing: border-box;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/*
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+*/
 
 .wrapper {
   width: 1200px;
@@ -23,6 +66,7 @@ body {
 }
 
 .main-header {
+  position: relative;
   width: 1200px;
   height: 56px;
   margin: 0 auto;
@@ -31,10 +75,10 @@ body {
 }
 
 .main-navigation {
-  display: flex;
+  /*для чего в барбершопе здесь display: flex;*/
+  /*display: flex;
   flex-direction: column;
-  align-items: center;
-
+  align-items: center;*/
   font-size: 14px;
   line-height: 26px;
   color: #000000;
@@ -44,35 +88,29 @@ body {
 
 .main-header-logo {
   position: absolute;
+  z-index: 1;
   left: 50%;
   margin-left: -70px;
   width: 140px;
   height: 71px;
-  /* order:2;*/
-  /*Вопрос: нужно ли у логотипа указывать высоту и ширину блока который он занимает?*/
-
 }
-
-/*Вопрос: как сделать чтобы при занимании нав.ссылок по шапке, картинка учитывалась?
-размеры блоков с меню 4 шт по 239px/56px
-а блок где логотип = 244px/56px
-
-может задать каждому li свой размер, и логотип добавить внутрь li?
-*/
 
 .site-navigation {
   list-style: none;
   display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
-  /*как текст по двум углам распределить?*/
-  /*align-items: center;*/
-  /* text-align: center;*/
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .site-navigation > li {
-  flex-grow: 1;
+  width: 20%;
+  text-align: center;
+  line-height: 56px;
+}
+
+.site-navigation > li:nth-child(2) {
+  margin-right: 20%;
 }
 
 .site-navigation a:hover,
@@ -92,16 +130,6 @@ body {
   margin: 0 auto;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
 
 .intro-welcome {
   position: relative;
@@ -110,11 +138,8 @@ body {
   background-color: #f2f2f2;
   background-image: url("../img/background-photo.jpg");
   background-position: top center;
-
-  /*box-sizing: border-box;
-  margin: 0 auto;
-  padding: 0;*/
 }
+
 
 .welcome-image {
   position: relative;
@@ -123,86 +148,100 @@ body {
   margin-top: 77px;
 }
 
-/*Вопрос: как прижать к низу картинку? bottom:-2px; так можно?*/
+.intro-welcome:before {
+  content: "";
+  position: absolute;
+  width: 1200px;
+  height: 59px;
+  background: transparent;
+  background-image: url("../img/intro-mask.svg");
+  bottom: -2px;
+}
+
+/*
 .intro-mask {
   position: absolute;
   width: 1200px;
   height: 59px;
   background: transparent;
-  background-image: url("../img/intro-mask.svg"); /*url("../img/polygon.png"); */
+  background-image: url("../img/intro-mask.svg");
   bottom: -2px;
-
-}
-
-a {
-  text-decoration: none;
-}
+}*/
 
 /*Вопрос: между предыдущим блоком и этим дырка, почему она образуется, как исправлять ? можно пользоваться top:-17px;? */
 .intro {
-  position: relative;
   width: 1200px;
   height: 216px;
-  text-align: center;
-  line-height: 26px;
   background-color: #ffffff;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/*
 .intro-center {
-  position: absolute;
+  text-align: center;
+  line-height: 26px;
   top: 50%;
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-}
+}*/
 
 .intro-heading {
-  width: 440px;
+  display: block;
+  width: 440px; /*440px;*//*509*/
   height: 48px;
   font-size: 21px;
-  font-weight: 700;
+  line-height: 26px;
   color: #000000;
 
-  /*Вопрос: как сделать чтобы текст перешел на другую строку? размерами блок ограничен и судя по макету текст должен был перейти*/
+  margin: 0;
+  padding-top: 61px;
+  padding-left: 380px;
+  padding-right: 380px;
 
-  /* word-wrap: break-word;
-   white-space: normal;*/
 }
 
 .intro-subheading {
-  width: 489px;
+  display: block;
+  width: 489px; /*489px;*//*542*/
   height: 13px;
   font-size: 14px;
   font-weight: 400;
-  color: #333333
+  color: #333333;
+  margin: 0;
+  padding-top: 38px;
+  padding-left: 355px;
+  padding-right: 356px;
 }
 
-/*Вопрос: почему блок не встает на всю ширину как встала картинка выше нее?*/
 .features {
-  position: relative;
   width: auto;
   margin: 0 auto;
-
-  /*margin-left: auto;
-  margin-right: auto;*/
 }
 
 .features-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .feature-item {
-  position: relative;
-  text-align: center;
-  text-transform: uppercase;
-  color: #000000;
-  background-color: #ffffff;
-
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
 
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #ffffff;
+
+}
+
+.feature-item img {
+  display: block;
 }
 
 .feature-item h3 {
@@ -217,34 +256,168 @@ a {
   font-weight: 400;
 }
 
-.feature-item-blue {
-  color: #ffffff;
-  background-color: #81b3d2;
-}
-
 .features-item-block {
-  position: relative;
   width: 400px;
   height: 256px;
-  /*Вопрос: центрирование текста ?*/
+  box-sizing: border-box;
 }
 
-.features-item-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.feature-item-city {
+  color: #ffffff;
+  background-color: #81b3d2;
+  padding-top: 46px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 64px;
+}
+
+/*.feature-item:nth-child(2) {
+  height: 337px;
+  width: 400px;
+}*/
+/*
+.features-item-habitation:before{
+  content: "";
+  background-image: url("../img/icon-1.svg");
+  background-position: center, 0 0;
+  background-repeat: no-repeat;
+  width:75px;
+  height:72px;
+  padding-top: 60px;
+  padding-left: 162px;
+  padding-right: 163px;
+  padding-bottom: 0px;
+  display:block;
+  margin: 0;
+}
+*/
+
+.features-item-habitation {
+  height: 337px;
+  width: 400px;
+}
+
+.features-item-habitation img {
+  padding-top: 60px;
+  padding-left: 162px;
+  padding-right: 163px;
+}
+
+.features-item-habitation h3 {
+  padding-top: 29px;
+  padding-left: 165px;
+  padding-right: 168px;
+  margin: 0;
+}
+
+.features-item-habitation p {
+  width: 252px;
+  height: 34px;
+  padding-top: 31px;
+  padding-left: 73px;
+  padding-right: 75px;
+  padding-bottom: 85px;
+  margin: 0;
+}
+
+.features-item-food {
+  height: 337px;
+  width: 400px;
+}
+
+.features-item-food img {
+  padding-top: 62px;
+  padding-left: 163px;
+  padding-right: 163px;
+}
+
+.features-item-food h3 {
+  padding-top: 32px;
+  padding-left: 181px;
+  padding-right: 181px;
+  margin: 0;
+}
+
+.features-item-food p {
+  width: 284px;
+  height: 35px;
+  padding-top: 26px;
+  padding-left: 58px;
+  margin: 0;
+}
+
+.features-item-souvenir {
+  height: 337px;
+  width: 400px;
+}
+
+.features-item-souvenir img {
+  padding-top: 56px;
+  padding-right: 168px;
+  padding-left: 168px;
+}
+
+.features-item-souvenir h3 {
+  padding-top: 32px;
+  padding-left: 149px;
+  padding-right: 149px;
+  margin: 0;
+}
+
+.features-item-souvenir p {
+  width: 273px;
+  height: 36px;
+  padding-top: 28px;
+  padding-left: 64px;
+  padding-right: 63px;
+  margin: 0;
+}
+
+.feature-item-devil {
+  color: #ffffff;
+  background-color: #81b3d2;
+  padding-top: 49px;
+  padding-left: 48px;
+  padding-right: 49px;
+  padding-bottom: 65px;
 }
 
 .feature-item-gray {
   background-color: #eeeeee;
-  /*display:flex;*/
 }
 
+.feature-item-gray h3 {
+  display: block;
+  width: 120px;
+  margin: auto;
+}
+
+.features-item-area {
+
+  padding-top: 50px;
+  padding-left: 95px;
+  padding-right: 97px;
+  padding-bottom: 63px;
+}
+
+.features-item-road {
+
+  padding-top: 50px;
+  padding-left: 69px;
+  padding-right: 69px;
+  padding-bottom: 64px;
+}
+
+.features-item-tourist {
+  padding-top: 50px;
+  padding-left: 77px;
+  padding-right: 76px;
+  padding-bottom: 64px;
+}
 
 .interested-in {
+  width: 100%;
+  height: 291px;
   text-align: center;
   text-transform: uppercase;
   color: #000000;
@@ -254,17 +427,25 @@ a {
 .interested-in h2 {
   font-size: 30px;
   line-height: 36px;
-  font-weight: 700;
+  margin: 0;
+  padding-top: 57px;
+  padding-left: 383px;
+  padding-right: 383px;
 }
 
 .interested-in p {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
+  padding-top: 12px;
+  padding-left: 383px;
+  padding-right: 382px;
+  padding-bottom: 52px;
+  margin: 0;
+
 }
-
 .search {
-
+  position: relative;
 }
 
 .button-search {
@@ -276,6 +457,8 @@ a {
   width: 568px;
   height: 86px;
   border: none;
+  margin: 0;
+  padding: 0;
 }
 
 .button-brown:hover,
@@ -298,6 +481,10 @@ a {
   width: 458px;
   height: 58px;
   border: none;
+
+  margin-top: 54px;
+  margin-left: 55px;
+
 }
 
 .button-blue:hover,
@@ -315,10 +502,6 @@ a {
 это отдельный блок внутри формы с display:flex и все три строки рассматривать
 как отдельные элементы которые распологать в одинаковом расстоянии друг от друга?, */
 
-.search {
-  position: relative;
-}
-
 .search-form {
   color: #000000;
   background-color: #ffffff;
@@ -329,9 +512,9 @@ a {
   left: 50%;
   margin-left: -284px;
   top: 100%;
-  /*display: none;*/
 }
 
+/*
 .search-form label {
   font-family: "PT Sans", sans-serif;
   font-size: 14px;
@@ -342,7 +525,139 @@ a {
 .search-form p {
   position: relative;
 }
+*/
 
+.search-form-control {
+  display: flex;
+  position: relative;
+}
+
+.search-form-control input {
+  height: 38px;
+  width: 346px;
+  margin-top: 55px;
+  margin-left: 21px;
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+}
+.search-form-control label {
+  width: 91px;
+  height: 12px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+
+  padding-top: 61px;
+  padding-left: 55px;
+}
+
+.search-form-icon-calendar {
+  display: block;
+  content: "";
+  width: 21px;
+  height: 22px;
+  background-image: url("../img/calendar.png");
+  position: absolute;
+  right: 64px;
+  top: 63px;
+}
+
+.search-form-control.leave input {
+  margin-top: 29px;
+  margin-left: 21px;
+}
+
+.search-form-control.leave label {
+  padding-top: 36px;
+  padding-left: 55px;
+}
+
+.leave .search-form-icon-calendar {
+  display: block;
+  content: "";
+  width: 21px;
+  height: 22px;
+  background-image: url("../img/calendar.png");
+  position: absolute;
+  right: 64px;
+  top: 37px;
+}
+
+
+
+.search-form-grid{
+  display: flex;
+  margin-top: 30px;
+  height: 38px;
+}
+
+
+.search-form-control-half {
+  width: 50%;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.search-form-control-half label {
+
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+
+  padding-left: 55px;
+  padding-right: 41px;
+}
+
+.search-form-control-half-child {
+  width: 50%;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.search-form-control-half-child label {
+
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+
+  padding-left: 53px;
+  padding-right: 27px;
+}
+
+.search-form-count {
+  width: 114px;
+  display: flex;
+}
+.search-form-count button{
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+}
+.search-form-count input {
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+}
+
+/*
 .search-form-input-arrival {
   background: #f2f2f2;
   font: inherit;
@@ -373,12 +688,10 @@ a {
   right: 55px;
 }
 
-/*Вопрос: как правльно указать расположение календариков? поле ввода сделать блоком
-и внутри картинку, или можно календарики сделать position:absolute?*/
+
 .search-form-button {
   z-index: 2;
   position: relative;
-  /*right: 35px;*/
   top: 50%;
   bottom: -19px;
   background: transparent;
@@ -397,14 +710,21 @@ a {
   line-height: 26px;
   color: #a9a9a9;
 }
+*/
 
 .modal-map {
 
+}
+.modal-map img{
+  display: block;
 }
 
 .main-footer {
   color: #000000;
   background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .footer-contacts {
@@ -430,6 +750,7 @@ a {
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
+  margin: 0;
 }
 
 .footer-copyright .button:hover,

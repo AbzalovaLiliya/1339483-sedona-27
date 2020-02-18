@@ -8,7 +8,9 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
 <div class="wrapper">
+
   <header class="main-header">
     <nav class="main-navigation">
       <a class="main-header-logo">
@@ -22,17 +24,17 @@
       </ul>
     </nav>
   </header>
+
   <main class="container">
     <h1 class="visually-hidden">Седона</h1>
     <section class="intro-welcome">
       <img src="img/intro-welcome.svg" class="welcome-image" width="459" height="353" alt="Добро пожаловать в Седону">
-      <div class="intro-mask"></div>
-    </section>
+  </section>
     <section class="intro">
-      <div class="intro-center">
+      <!--<div class="intro-center">-->
         <h2 class="intro-heading">Седона — небольшой городок в Аризоне, заслуживающий большего!</h2>
         <p class="intro-subheading">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
-      </div>
+     <!-- </div>-->
     </section>
     <!-- Блок "Преимущества" -->
     <section class="features">
@@ -40,122 +42,125 @@
       <ul class="features-list">
         <!-- Блок "Настоящий городок" -->
         <li class="feature-item">
-          <div class="features-item-block feature-item-blue">
-            <div class="features-item-center">
+          <div class="features-item-block feature-item-city">
               <h3>Настоящий городок</h3>
               <p>— №1 —</p>
               <p>Седона — не аттракцион для туристов, там течёт своя жизнь</p>
             </div>
-          </div>
-          <div>
-            <img src="img/real-city.jpg" width="800" height="256" alt="Картинка вида города">
-          </div>
-        </li>
-        <!-- общий блок Жилье, Еда и Сувениры-->
+           <div>
+             <img src="img/real-city.jpg" width="800" height="256" alt="Картинка вида города">
+           </div>
+         </li>
+         <!-- общий блок Жилье, Еда и Сувениры-->
         <li class="feature-item">
-          <section class="features-item-block">
-            <div class="features-item-center">
+         <div class="features-item-block features-item-habitation">
               <img src="img/icon-1.svg" width="75" height="72" alt="Картинка домика">
               <h3>Жильё</h3>
-              <!-- ВОПРОС: как ширину и высоту текста правильно здесь контрольровать? можно ли здесь делать <p style="width: 284px; height: 35px">-->
-              <p>Рекомендуем пожить в настоящем мотеле,<br>всё как в кино!</p>
-            </div>
-          </section>
-          <section class="features-item-block">
-            <div class="features-item-center">
+               <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
+          </div>
+           <div class="features-item-block features-item-food">
               <img src="img/icon-3.svg" width="74" height="70" alt="Картинка бургера">
               <h3>Еда</h3>
               <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
-            </div>
-          </section>
-          <section class="features-item-block">
-            <div class="features-item-center">
+           </div>
+           <div class="features-item-block features-item-souvenir">
               <img src="img/icon-2.svg" width="64" height="76" alt="Картинка подарочной упаковки">
               <h3>Сувениры</h3>
               <p>Не только китайского, но и местного производства!</p>
-            </div>
-          </section>
-
+          </div>
         </li>
         <!-- Блок "Мост дъявола" -->
         <li class="feature-item">
-          <div>
-            <img src="img/devils-bridge.jpg" width="800" height="256" alt="Картинка моста дъявола">
-          </div>
-          <div class="features-item-block feature-item-blue">
-            <div class="features-item-center">
-              <h3>Там есть <br> Мост дьявола</h3>
-              <p>— №2 —</p>
-              <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
-            </div>
-          </div>
+           <div>
+             <img src="img/devils-bridge.jpg" width="800" height="256" alt="Картинка моста дъявола">
+           </div>
+           <div class="features-item-block feature-item-devil">
+               <h3>Там есть <br> Мост дьявола</h3>
+               <p>— №2 —</p>
+               <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+           </div>
 
-        </li>
-        <!-- общий блок Площадь, Дороги, Туристы-->
+         </li>
+         <!-- общий блок Площадь, Дороги, Туристы-->
         <li class="feature-item feature-item-gray">
-          <section class="features-item-block">
-            <div class="features-item-center">
-              <h3>Небольшая площадь</h3>
-              <p>— №3 —</p>
-              <p>Все достопримечательности находятся очень близко</p>
-            </div>
-          </section>
-          <section class="features-item-block">
-            <div class="features-item-center">
-              <h3>Красивая дорога</h3>
-              <p>— №4 —</p>
-              <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-            </div>
-          </section>
-          <section class="features-item-block">
-            <div class="features-item-center">
-              <h3>Мало туристов</h3>
-              <p>— №5 —</p>
-              <p>Большинство едет в гранд каньон и толпится там</p>
-            </div>
-          </section>
-        </li>
-      </ul>
-    </section>
-    <section class="interested-in">
-      <h2>Заинтересовались?</h2>
-      <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
-      <section class="search">
-        <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
-        <button type="button" class="button-search button-brown">Поиск гостиницы в Седоне</button>
-        <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+           <div class="features-item-block features-item-area">
+             <h3>Небольшая площадь</h3>
+             <p>— №3 —</p>
+             <p>Все достопримечательности находятся очень близко</p>
+           </div>
+           <div class="features-item-block features-item-road">
+             <h3>Красивая дорога</h3>
+             <p>— №4 —</p>
+             <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+           </div>
+           <div class="features-item-block features-item-tourist">
+             <h3>Мало туристов</h3>
+             <p>— №5 —</p>
+             <p>Большинство едет в гранд каньон и толпится там</p>
+           </div>
+       </li>
+     </ul>
+   </section>
+   <section class="interested-in">
+     <h2>Заинтересовались?</h2>
+     <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в седоне </p>
+     <section class="search">
+       <h2 class="visually-hidden">Поиск гостиницы в Седоне</h2>
+       <button type="button" class="button-search button-brown">Поиск гостиницы в Седоне</button>
+       <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
 
-          <p>
-            <label for="arrival-date">Дата заезда</label>
-            <input type="text" class="search-form-input-arrival" id="arrival-date" name="arrival-date"
-                   value="24 АПРЕЛЯ 2017">
-            <button type="button" class="search-form-button">
+         <div class="search-form-control">
+           <label for="arrival-date">Дата заезда</label>
+           <input type="text" id="arrival-date" name="arrival-date"
+                  value="   24 АПРЕЛЯ 2017">
+           <span class="search-form-icon-calendar"></span>
+           <!-- <button type="button" class="search-form-button">
               <img src="img/calendar.png" width="21" height="22" alt="Кнопка для просмотра и выбора даты с календаря">
-            </button>
-          </p>
-          <p>
-            <label for="leave-date">Дата выезда</label>
-            <input type="text" class="search-form-input-leave" id="leave-date" name="leave-date" value="4 ИЮЛЯ 2017">
-            <button type="button" class="search-form-button">
+           </button>-->
+         </div>
+         <div class="search-form-control leave">
+           <label for="leave-date">Дата выезда</label>
+           <input type="text" id="leave-date" name="leave-date" value="   4 ИЮЛЯ 2017">
+           <span class="search-form-icon-calendar"></span>
+           <!-- <button type="button" class="search-form-button">
               <img src="img/calendar.png" width="21" height="22" alt="Кнопка для просмотра и выбора даты с календаря">
-            </button>
-          </p>
-          <!--ВОПРОС: почему в данном месте нельзя обернуть в тег р ? валидатор ругается -->
-          <label for="adults-number">Взрослые</label>
+           </button>-->
+         </div>
+
+         <div class="search-form-grid">
+
+           <div class="search-form-control-half">
+             <label for="adults-number">Взрослые:</label>
+             <div class="search-form-count">
+               <button type="button">-</button>
+               <input id="adults-number" name="adults" type="text" value="    1" size="5"/>
+               <!-- как сделать чтобы текст из value был в центре -->
+               <button type="button">+</button>
+             </div>
+           </div>
+
+           <div class="search-form-control-half-child">
+             <label for="children-number">Дети:</label>
+             <div class="search-form-count">
+               <button type="button">-</button>
+               <input id="children-number" name="children" type="text" value="    1" size="5"/>
+               <button type="button">+</button>
+             </div>
+           </div>
+        <!--  <label for="adults-number">Взрослые</label>
           <div class="div-plus-minus">
-            <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+            <button type="button" class="button-plus-minus">-</button>
             <input id="adults-number" name="adults" type="text" value="1" size="5"/>
-            <button type="button" class="button-plus-minus">+</button><!-- "+" -->
+            <button type="button" class="button-plus-minus">+</button>
           </div>
 
-          <!--ВОПРОС: почему в данном месте нельзя обернуть в тег р ? валидатор ругается -->
           <label for="children-number">Дети</label>
           <div class="div-plus-minus">
-            <button type="button" class="button-plus-minus">-</button><!-- "-" -->
+            <button type="button" class="button-plus-minus">-</button>
             <input id="children-number" name="children" type="text" value="1" size="5"/>
-            <button type="button" class="button-plus-minus">+</button><!-- "+" -->
+            <button type="button" class="button-plus-minus">+</button>
+          </div>-->
           </div>
-
           <button type="submit" class="button-search-submit button-blue">Найти</button>
 
         </form>
