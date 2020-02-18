@@ -444,6 +444,7 @@ input[type="radio"].visually-hidden {
   margin: 0;
 
 }
+
 .search {
   position: relative;
 }
@@ -514,18 +515,6 @@ input[type="radio"].visually-hidden {
   top: 100%;
 }
 
-/*
-.search-form label {
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
-}
-
-.search-form p {
-  position: relative;
-}
-*/
 
 .search-form-control {
   display: flex;
@@ -533,8 +522,15 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form-control input {
+  box-sizing: border-box;
   height: 38px;
   width: 346px;
+
+  padding-top: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 7px;
+
   margin-top: 55px;
   margin-left: 21px;
   background: #f2f2f2;
@@ -544,7 +540,20 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
+  color: #000000;
 }
+
+.search-form-control input:hover {
+  background: #ebebeb;
+}
+
+.search-form-control input:focus {
+  background: #ffffff;
+  border: 1px solid #f2f2f2;
+  outline-color: #f2f2f2;
+  /*Как поменять цвет рамки при фокусе??*/
+}
+
 .search-form-control label {
   width: 91px;
   height: 12px;
@@ -552,20 +561,42 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
-
   padding-top: 61px;
   padding-left: 55px;
 }
 
-.search-form-icon-calendar {
+.search-form-button-calendar {
   display: block;
   content: "";
   width: 21px;
   height: 22px;
   background-image: url("../img/calendar.png");
+  /* background-image: url("../img/calendar.svg");*/
+  background-color: transparent;
+  border: none;
+  outline: none;
   position: absolute;
   right: 64px;
   top: 63px;
+
+
+}
+
+/*!!Это не работает пока картинка не будет в норм формате экспортирована*/
+/*как поменять цвет если картинка экспортирована как две картинки в одной?*/
+/*.search-form-button-calendar:hover path,
+.search-form-button-calendar:focus path {
+  fill: #000000;
+}
+.search-form-button-calendar:active path {
+  fill: #88b7d5;
+}*/
+.search-form-button-calendar:hover,
+.search-form-button-calendar:focus  {
+  background-image: url("../img/calendar-black.png");
+}
+.search-form-button-calendar:active  {
+  background-image: url("../img/calendar-blue.png");
 }
 
 .search-form-control.leave input {
@@ -578,20 +609,38 @@ input[type="radio"].visually-hidden {
   padding-left: 55px;
 }
 
-.leave .search-form-icon-calendar {
+.search-form-control.leave button { /*почему не срабатывает .search-form-control.leave  .search-form-button-calendar ??*/
   display: block;
   content: "";
   width: 21px;
   height: 22px;
   background-image: url("../img/calendar.png");
+  /* background-image: url("../img/calendar.svg");*/
+  background-color: transparent;
+  border: none;
+
   position: absolute;
   right: 64px;
   top: 37px;
 }
 
+/*!!Это не работает пока картинка не будет в норм формате экспортирована*/
+/*.search-form-control.leave button:hover path {
+  fill: #000000;
+}
+.search-form-control.leave button:active path {
+  fill: #88b7d5;
+}*/
+.search-form-control.leave button:hover,
+.search-form-control.leave button:focus  {
+  background-image: url("../img/calendar-black.png");
+}
+.search-form-control.leave button:active  {
+  background-image: url("../img/calendar-blue.png");
+}
 
 
-.search-form-grid{
+.search-form-grid {
   display: flex;
   margin-top: 30px;
   height: 38px;
@@ -602,23 +651,45 @@ input[type="radio"].visually-hidden {
   width: 50%;
   margin-bottom: 20px;
   display: flex;
-}
-
-.search-form-control-half label {
-
   font-family: "PT Sans", sans-serif;
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
+}
 
+.search-form-control-half label {
   padding-left: 55px;
   padding-right: 41px;
 }
+
+.search-form-control-half button {
+  padding-left: 55px;
+  padding-right: 41px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #a9a9a9;
+}
+
+.search-form-control-half button:hover {
+  color: #000000;
+
+}
+
+.search-form-control-half button:active {
+  color: #88b7d5;
+}
+
 
 .search-form-control-half-child {
   width: 50%;
   margin-bottom: 20px;
   display: flex;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
 }
 
 .search-form-control-half-child label {
@@ -632,11 +703,38 @@ input[type="radio"].visually-hidden {
   padding-right: 27px;
 }
 
+
+.search-form-control-half-child button {
+  padding-left: 55px;
+  padding-right: 41px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #a9a9a9;
+  outline: none;
+}
+
+
+.search-form-control-half-child button:hover {
+  color: #000000;
+  outline: none;
+
+}
+
+.search-form-control-half-child button:active {
+  color: #88b7d5;
+  outline: none;
+}
+
 .search-form-count {
   width: 114px;
   display: flex;
 }
-.search-form-count button{
+/*
+button-minus{
+  display: block;
+  content: "";
   width: 38px;
   height: 38px;
   margin: 0;
@@ -645,7 +743,41 @@ input[type="radio"].visually-hidden {
   font: inherit;
   border: #000000;
   cursor: pointer;
+  background-image: url("../img/minus-grey.png");
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 64px;
+  top: 37px;
 }
+*/
+.search-form-count button {
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+  font: inherit;
+  border: #000000;
+  cursor: pointer;
+
+  color: #a9a9a9;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+
+.search-form-count button:hover,
+.search-form-count button:focus{
+  color: #000000;
+}
+
+.search-form-count button:active{
+  color: #81b3d2;
+}
+
+
 .search-form-count input {
   width: 38px;
   height: 38px;
@@ -655,109 +787,144 @@ input[type="radio"].visually-hidden {
   font: inherit;
   border: #000000;
   cursor: pointer;
-}
-
-/*
-.search-form-input-arrival {
-  background: #f2f2f2;
-  font: inherit;
-  border: #000000;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
-  width: 346px;
-  height: 38px;
-
-  top: 55px;
-  right: 55px;
-}
-
-.search-form-input-leave {
-  background: #f2f2f2;
-  font: inherit;
-  border: #000000;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
-  width: 346px;
-  height: 38px;
-
-  top: 122px;
-  right: 55px;
-}
-
-
-.search-form-button {
-  z-index: 2;
-  position: relative;
-  top: 50%;
-  bottom: -19px;
-  background: transparent;
-  border: none;
-}
-
-
-.div-plus-minus {
-  background: #f2f2f2;
-}
-
-.button-plus-minus {
-  border: none;
   text-align: center;
-  font-size: 14px;
-  line-height: 26px;
-  color: #a9a9a9;
 }
-*/
 
 .modal-map {
 
 }
-.modal-map img{
+
+.modal-map img {
   display: block;
 }
 
 .main-footer {
   color: #000000;
-  background-color: #ffffff;
+  background-color: #f9fbf6;
+  height: 120px;
+  width: 1200px;
+
+}
+
+.footer-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
+
 }
 
 .footer-contacts {
+  width: 400px;
+  margin: 0;
+
+  padding-top: 36px;
+  padding-left: 132px;
+
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
 }
 
+.footer-contacts h4 {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+.footer-contacts p {
+  margin: 0;
+}
+
 .footer-social {
+  width: 400px;
+  margin: 0;
   text-align: center;
 }
 
 .footer-social ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 141px;
+  margin: 0 auto;
+  padding: 0;
+
   list-style: none;
 }
 
 .social-button {
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 48px;
+
+  background-color: #81b3d2;
+}
+
+.social-button:hover,
+.social-button:focus {
+  background-color: #669ec0;
+}
+
+.social-button:active {
+  background-color: #5496bd;
+}
+
+.social-button:active path {
+  fill: #88b6d1;
 }
 
 .footer-copyright {
+  display: flex;
+  width: 400px;
+  margin: 0;
+  margin-top: -25px;
+  padding: 0;
+  padding-left: 101px;
   text-align: center;
   font-size: 14px;
   line-height: 26px;
   font-weight: 400;
-  margin: 0;
 }
 
-.footer-copyright .button:hover,
-.footer-copyright .button:focus {
-  color: #000000;
-  background-color: #ffffff;
+.footer-copyright b {
+
+  padding-right: 8px;
+  padding-top: 54px;
 }
+
+/*
+.footer-copyright .button {
+  display: block;
+  width: 115px;
+  height: 41px;
+  background-image: url("../img/logo-htmlacademy.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  margin-top: 39px;
+}
+*/
+.footer-copyright .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
+  height: 41px;
+  margin: 0;
+  margin-top: 39px;
+  background-color: transparent;
+}
+
+.footer-copyright .button:hover path {
+  fill: #81b3d2;
+}
+
+.footer-copyright .button:active path {
+  fill: #bdbbbc;
+}
+
 
 /*hotels.html*/
 
