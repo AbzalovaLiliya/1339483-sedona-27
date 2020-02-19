@@ -37,26 +37,11 @@ input[type="radio"].visually-hidden {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
-
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-/*
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-*/
 
 .wrapper {
   width: 1200px;
@@ -75,10 +60,10 @@ input[type="radio"].visually-hidden {
 }
 
 .main-navigation {
-  /*для чего в барбершопе здесь display: flex;*/
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;*/
+  display: flex;
+  flex-direction: column; /*Вопрос: как это влияет на положение логотипа*/
+  align-items: center;
+
   font-size: 14px;
   line-height: 26px;
   color: #000000;
@@ -98,13 +83,15 @@ input[type="radio"].visually-hidden {
 .site-navigation {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   width: 100%;
+  /*Вопрос: при переполнении текста такая ширина ведь не подойдет?*/
 }
 
 .site-navigation > li {
-  width: 20%;
+  width: 20%; /*задать max-width ?*/
   text-align: center;
   line-height: 56px;
 }
@@ -130,7 +117,6 @@ input[type="radio"].visually-hidden {
   margin: 0 auto;
 }
 
-
 .intro-welcome {
   position: relative;
   width: 1200px;
@@ -140,9 +126,8 @@ input[type="radio"].visually-hidden {
   background-position: top center;
 }
 
-
 .welcome-image {
-  position: relative;
+  position: relative; /*по сути .intro-welcome:before лежит в .intro-welcome который relative, а нужно ли здесь делать position?*/
   left: 50%;
   margin-left: -229.5px;
   margin-top: 77px;
@@ -158,54 +143,32 @@ input[type="radio"].visually-hidden {
   bottom: -2px;
 }
 
-/*
-.intro-mask {
-  position: absolute;
-  width: 1200px;
-  height: 59px;
-  background: transparent;
-  background-image: url("../img/intro-mask.svg");
-  bottom: -2px;
-}*/
-
-/*Вопрос: между предыдущим блоком и этим дырка, почему она образуется, как исправлять ? можно пользоваться top:-17px;? */
 .intro {
   width: 1200px;
   height: 216px;
   background-color: #ffffff;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;
+   margin-right: auto;*/
+  /* Вопрос: это не дает никакого результата потому что в .container margin 0 auto */
 }
-
-/*
-.intro-center {
-  text-align: center;
-  line-height: 26px;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}*/
 
 .intro-heading {
   display: block;
-  width: 440px; /*440px;*//*509*/
+  width: 440px;
   height: 48px;
   font-size: 21px;
   line-height: 26px;
   color: #000000;
-
   margin: 0;
   padding-top: 61px;
   padding-left: 380px;
   padding-right: 380px;
-
 }
 
 .intro-subheading {
   display: block;
-  width: 489px; /*489px;*//*542*/
+  width: 489px;
   height: 13px;
   font-size: 14px;
   font-weight: 400;
@@ -222,6 +185,8 @@ input[type="radio"].visually-hidden {
 }
 
 .features-list {
+  display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -270,27 +235,6 @@ input[type="radio"].visually-hidden {
   padding-right: 60px;
   padding-bottom: 64px;
 }
-
-/*.feature-item:nth-child(2) {
-  height: 337px;
-  width: 400px;
-}*/
-/*
-.features-item-habitation:before{
-  content: "";
-  background-image: url("../img/icon-1.svg");
-  background-position: center, 0 0;
-  background-repeat: no-repeat;
-  width:75px;
-  height:72px;
-  padding-top: 60px;
-  padding-left: 162px;
-  padding-right: 163px;
-  padding-bottom: 0px;
-  display:block;
-  margin: 0;
-}
-*/
 
 .features-item-habitation {
   height: 337px;
@@ -499,10 +443,6 @@ input[type="radio"].visually-hidden {
   background-color: #5496bd;
 }
 
-/*ВОПРОС: дата заезда, дата выезда и строка с кол-ом детей и взрослых,
-это отдельный блок внутри формы с display:flex и все три строки рассматривать
-как отдельные элементы которые распологать в одинаковом расстоянии друг от друга?, */
-
 .search-form {
   color: #000000;
   background-color: #ffffff;
@@ -551,7 +491,6 @@ input[type="radio"].visually-hidden {
   background: #ffffff;
   border: 1px solid #f2f2f2;
   outline-color: #f2f2f2;
-  /*Как поменять цвет рамки при фокусе??*/
 }
 
 .search-form-control label {
@@ -592,10 +531,11 @@ input[type="radio"].visually-hidden {
   fill: #88b7d5;
 }*/
 .search-form-button-calendar:hover,
-.search-form-button-calendar:focus  {
+.search-form-button-calendar:focus {
   background-image: url("../img/calendar-black.png");
 }
-.search-form-button-calendar:active  {
+
+.search-form-button-calendar:active {
   background-image: url("../img/calendar-blue.png");
 }
 
@@ -632,20 +572,19 @@ input[type="radio"].visually-hidden {
   fill: #88b7d5;
 }*/
 .search-form-control.leave button:hover,
-.search-form-control.leave button:focus  {
+.search-form-control.leave button:focus {
   background-image: url("../img/calendar-black.png");
 }
-.search-form-control.leave button:active  {
+
+.search-form-control.leave button:active {
   background-image: url("../img/calendar-blue.png");
 }
-
 
 .search-form-grid {
   display: flex;
   margin-top: 30px;
   height: 38px;
 }
-
 
 .search-form-control-half {
   width: 50%;
@@ -703,7 +642,6 @@ input[type="radio"].visually-hidden {
   padding-right: 27px;
 }
 
-
 .search-form-control-half-child button {
   padding-left: 55px;
   padding-right: 41px;
@@ -715,11 +653,9 @@ input[type="radio"].visually-hidden {
   outline: none;
 }
 
-
 .search-form-control-half-child button:hover {
   color: #000000;
   outline: none;
-
 }
 
 .search-form-control-half-child button:active {
@@ -731,26 +667,8 @@ input[type="radio"].visually-hidden {
   width: 114px;
   display: flex;
 }
-/*
-button-minus{
-  display: block;
-  content: "";
-  width: 38px;
-  height: 38px;
-  margin: 0;
-  padding: 0;
-  background: #f2f2f2;
-  font: inherit;
-  border: #000000;
-  cursor: pointer;
-  background-image: url("../img/minus-grey.png");
-  background-color: transparent;
-  border: none;
-  position: absolute;
-  right: 64px;
-  top: 37px;
-}
-*/
+
+/*КАк попдобрать + и - такими же как на макете? моэет картинками вставить?*/
 .search-form-count button {
   width: 38px;
   height: 38px;
@@ -767,16 +685,14 @@ button-minus{
   font-weight: 700;
 }
 
-
 .search-form-count button:hover,
-.search-form-count button:focus{
+.search-form-count button:focus {
   color: #000000;
 }
 
-.search-form-count button:active{
+.search-form-count button:active {
   color: #81b3d2;
 }
-
 
 .search-form-count input {
   width: 38px;
@@ -790,9 +706,9 @@ button-minus{
   text-align: center;
 }
 
-.modal-map {
+/*.modal-map {
 
-}
+}*/
 
 .modal-map img {
   display: block;
@@ -803,23 +719,19 @@ button-minus{
   background-color: #f9fbf6;
   height: 120px;
   width: 1200px;
-
 }
 
 .footer-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .footer-contacts {
   width: 400px;
   margin: 0;
-
   padding-top: 36px;
   padding-left: 132px;
-
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -847,7 +759,6 @@ button-minus{
   width: 141px;
   margin: 0 auto;
   padding: 0;
-
   list-style: none;
 }
 
@@ -857,7 +768,6 @@ button-minus{
   justify-content: center;
   width: 46px;
   height: 48px;
-
   background-color: #81b3d2;
 }
 
@@ -888,24 +798,10 @@ button-minus{
 }
 
 .footer-copyright b {
-
   padding-right: 8px;
   padding-top: 54px;
 }
 
-/*
-.footer-copyright .button {
-  display: block;
-  width: 115px;
-  height: 41px;
-  background-image: url("../img/logo-htmlacademy.svg");
-  background-repeat: no-repeat;
-  background-color: transparent;
-  border: none;
-  margin: 0;
-  margin-top: 39px;
-}
-*/
 .footer-copyright .button {
   display: flex;
   align-items: center;
@@ -926,7 +822,7 @@ button-minus{
 }
 
 
-/*hotels.html*/
+/*!!!!!!!!!!!!!!!!!1hotels.html!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11*/
 
 .nav-current {
   color: #766357;
