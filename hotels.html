@@ -92,25 +92,29 @@
     </section>
     <!--Секция с кнопками для сортировки результатов найденных гостиниц-->
     <section class="sort-results">
-      <h2 class="visually-hidden">Найденные гостиницы</h2>
-      <h3>Найдено: 3</h3>
-      <p>Сортировка:</p>
-      <div class="sort-buttons">
-        <button type="button" class="button-sort button-sort-active">По цене</button>
-        <button type="button" class="button-sort">По типу</button>
-        <button type="button" class="button-sort">По рейтингу</button>
-      </div>
-      <div class="up-down-buttons">
-        <!-- <button type="button" class="button-up">
-           <img src="img/icon-up-dir.svg" width="11" height="10" alt="Кнопка сортировки по возрастанию">
-         </button>
-         <button type="button" class="button-down">
-           <img src="img/icon-down-dir.svg" width="11" height="10" alt="Кнопка сортировки по убыванию">
-         </button> -->
+      <h2 class="visually-hidden">Результаты поиска гостиниц</h2>
 
-        <!-- ВОПРОС: можно ли в <a> или нужно в <div> ? -->
-        <a class="arrow button-up button-up-active" href="#">по возрастанию</a>
-        <a class="arrow button-down" href="#">по убыванию</a>
+      <div class="sort-results-filters">
+        <h3 class="sort-results-header">Найдено: 3</h3>
+        <p class="sort-results-subheading">Сортировка:</p>
+        <div class="sort-buttons">
+          <button type="button" class="button-sort button-sort-active">По цене</button>
+          <button type="button" class="button-sort">По типу</button>
+          <button type="button" class="button-sort">По рейтингу</button>
+        </div>
+      </div>
+
+      <div class="up-down-buttons">
+        <button type="button" class="button-up">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+            <path fill="#cacaca" d="M5.5 0L0 10h11z"/>
+          </svg>
+        </button>
+        <button type="button" class="button-down button-up-active">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+            <path fill="#cacaca" d="M5.5 10L0 0h11"/>
+          </svg>
+        </button>
       </div>
     </section>
     <!--общий блок по найденным гостиницам-->
@@ -121,10 +125,14 @@
         </div>
         <div class="hotel-description">
           <h2 class="hotels-link"><a href="#">Amara Resort & Spa</a></h2>
-          <span>Гостиница</span>
-          <span>от 4000 р.</span>
-          <button type="button" class="button-details button-blue">Подробнее</button>
-          <button type="button" class="button-booking button-brown">Забронировать</button>
+          <div class="hotels-inline-block">
+            <span>Гостиница</span>
+            <span>от 4000 р.</span>
+          </div>
+          <div class="button-inline-block">
+            <button type="button" class="button-details button-blue">Подробнее</button>
+            <button type="button" class="button-booking button-brown">Забронировать</button>
+          </div>
         </div>
         <div class="rating-section">
           <div class="stars-rating">
@@ -142,10 +150,14 @@
         </div>
         <div class="hotel-description">
           <h2 class="hotels-link"><a href="#">Desert Quail Inn</a></h2>
-          <span>Мотель</span>
-          <span>от 3000 р.</span>
-          <button type="button" class="button-details button-blue">Подробнее</button>
-          <button type="button" class="button-booking button-brown">Забронировать</button>
+          <div class="hotels-inline-block">
+            <span>Мотель</span>
+            <span>от 3000 р.</span>
+          </div>
+          <div class="button-inline-block">
+            <button type="button" class="button-details button-blue">Подробнее</button>
+            <button type="button" class="button-booking button-brown">Забронировать</button>
+          </div>
         </div>
         <div class="rating-section">
           <div class="stars-rating">
@@ -162,17 +174,21 @@
         </div>
         <div class="hotel-description">
           <h2 class="hotels-link"><a href="#">Villas at Poco Diablo</a></h2>
-          <span>Апартаменты</span>
-          <span>от 2000 р.</span>
-          <button type="button" class="button-details button-blue">Подробнее</button>
-          <button type="button" class="button-booking button-brown">Забронировать</button>
+          <div class="hotels-inline-block">
+            <span>Апартаменты</span>
+            <span>от 2000 р.</span>
+          </div>
+          <div class="inline-block">
+            <button type="button" class="button-details button-blue">Подробнее</button>
+            <button type="button" class="button-booking button-brown">Забронировать</button>
+          </div>
         </div>
         <div class="rating-section">
           <div class="stars-rating">
             <span></span>
             <span></span>
           </div>
-          <span class="rating"> Рейтинг: 9,2 </span>
+          <p class="rating"> Рейтинг: 9,2 </p>
         </div>
       </section>
     </section>

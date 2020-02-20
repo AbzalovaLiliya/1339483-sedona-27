@@ -468,7 +468,7 @@ input[type="radio"].visually-hidden {
 
   padding-top: 8px;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 39px;
   padding-bottom: 7px;
 
   margin-top: 55px;
@@ -503,6 +503,28 @@ input[type="radio"].visually-hidden {
   padding-top: 61px;
   padding-left: 55px;
 }
+
+.test-calendar {
+  width: 21px;
+  height: 22px;
+  background-color: transparent;
+  background-image: url("../img/calendar.svg");
+  border: none;
+  outline: none;
+  position: absolute;
+  right: 64px;
+  top: 63px;
+}
+
+.test-calendar:hover path,
+.test-calendar:focus path {
+  fill: #000000;
+}
+
+.test-calendar:active path {
+  fill: #88b7d5;
+}
+
 
 .search-form-button-calendar {
   display: block;
@@ -678,7 +700,6 @@ input[type="radio"].visually-hidden {
   font: inherit;
   border: #000000;
   cursor: pointer;
-
   color: #a9a9a9;
   font-size: 21px;
   line-height: 26px;
@@ -822,40 +843,39 @@ input[type="radio"].visually-hidden {
 }
 
 
-/*!!!!!!!!!!!!!!!!!1hotels.html!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!hotels.html!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .nav-current {
   color: #766357;
 }
 
+
 .search-section {
-  position: relative;
+
   width: 1200px;
   height: 217px;
 
-  background: #766357;
-  background: url("../img/filter-background.jpg");
+  background-color: #766357;
+  background-image: url("../img/filter-background.jpg");
   background-position: top center;
   top: -15px;
   /*Вопрос: Картинка выглядит не совсем так как на макете, она будто поднята или отображается не с самого начала по высоте*/
   /*background-size: 1200px 800px;*/
-
   background-repeat: no-repeat;
   color: #ffffff;
   text-transform: uppercase;
 }
 
 .filters-form {
-  position: relative; /*Вопрос:а оно тут нужно??*/
+
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-
 }
 
 .first-part-filters {
-  position: relative;
+
   display: flex;
   justify-content: space-around;
   align-items: center; /*!! Не отцентрировалось!*/
@@ -997,34 +1017,40 @@ input[type="radio"].visually-hidden {
 /* Вопрос: или здесь в sort-results сделать два больших блока? в первой половине текст, во второй в конце треугольники?*/
 
 .sort-results {
-  position: relative;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex-direction: row;
+  justify-content: space-between;
   height: 86px;
   background-color: #fefefe;
-
-  top: -15px;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.sort-results h3 {
+.sort-results-filters {
+  display: flex;
+  align-items: baseline;
+}
+
+.sort-results-header {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+
+  margin: 0;
+  padding-left: 72px;
+  padding-top: 31px;
 }
 
-.sort-results p {
+.sort-results-subheading {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
-
+  padding-left: 49px;
 }
 
 .sort-buttons {
   font-size: 12px;
   line-height: 18px;
   font-weight: 400;
+  margin-left: 40px;
 }
 
 .button-sort {
@@ -1033,6 +1059,10 @@ input[type="radio"].visually-hidden {
   border-bottom: 1px dotted #8bb9d5;
   color: #d2d2d2;
   background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 33px;
+  cursor: pointer;
 }
 
 .button-sort-active {
@@ -1051,52 +1081,59 @@ input[type="radio"].visually-hidden {
   border-bottom: none;
 }
 
+.up-down-buttons {
+  display: flex;
+  margin-top: 40px;
+  margin-bottom: 36px;
+  margin-right: 73px;
+  padding: 0;
+}
+
 .up-down-buttons button {
   outline: none;
   border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  width: 11px;
+  height: 10px;
 }
 
-a.arrow {
+.button-down {
+  margin: 0;
+  padding: 0;
+}
+
+.button-up {
+  margin-right: 12px;
+  padding: 0;
+}
+
+.button-down.button-up-active path {
+  fill: #81b3d2;
+}
+
+.button-up:hover path,
+.button-up:focus path,
+.button-down:hover path,
+.button-down:focus path {
+  fill: #000000;
+}
+
+.button-up:active path,
+.button-down:active path {
+  fill: #81b3d2;
+}
+
+.hotels-inline-block {
   display: inline-block;
-  margin: 0 10px;
-  font-size: 0;
+  padding: 0;
+  margin-top: 17px;
 }
 
-.arrow::before {
+.button-inline-block {
   display: inline-block;
-  border: 11px solid #cacaca;
-  border-right-width: 5px;
-  border-right-color: transparent;
-  border-left-width: 5px;
-  border-left-color: transparent;
-  content: "";
-}
-
-.button-up::before {
-  border-top-width: 0;
-}
-
-.button-down::before {
-  border-bottom-width: 0;
-}
-
-/*Вопрос: одна из кнопок Активная, она должна быть голубого цвета,
-сразу нужно рисовать треугольник правильного цвета или можно переопределить цвет нарисованного треуг.?*/
-
-.button-up-active {
-}
-
-/*Как правильно менять цвет треугольникам?*/
-.button-up:hover,
-.button-up:focus,
-.button-down:hover,
-.button-down:focus {
-  color: #000000;
-}
-
-.button-up:active,
-.button-down:active {
-  color: #81b3d2;
+  padding: 0;
+  margin-top: 18px;
 }
 
 .button-details {
@@ -1111,6 +1148,7 @@ a.arrow {
 }
 
 .button-booking {
+
   color: #ffffff;
   background-color: #766357;
   font-size: 14px;
@@ -1125,35 +1163,32 @@ a.arrow {
   color: #000000;
   background-color: #fefefe;
 
-  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   flex-direction: column;
-  height: 540px;
-
-  top: -15px;
+  height: 454px;
 
 }
 
 .hotel-section {
-  position: relative;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   flex-direction: row;
-
-  height: 180px;
+  box-sizing: border-box;
+  height: 151px; /*как быть с 1 пикселем? или задаьб по 151,3333*/
   width: 1200px;
-
-  border-top: 1px solid #e5e5e5;
-
+  border-bottom: 1px solid #e5e5e5;
   padding-left: 72px;
-
 }
 
+
 .hotel-description {
-  padding-left: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .find-results h2 {
@@ -1162,33 +1197,45 @@ a.arrow {
   font-weight: 700;
 }
 
-.find-results span {
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-}
 
 .hotels-image {
   width: 135px;
   height: 90px;
+  margin-top: 30px;
+  padding: 0;
 }
 
-/*ВОПРОС: как прибить к правому краю? разделить секцию hotel-section на два больших?
-абсолютным позиционированием можно задать расположение?*/
+
 .rating-section {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 522px;
+  padding: 0;
+
 }
 
 .rating {
+  display: block;
+  width: 110px;
+  height: 27px;
+  text-align: center;
+  background-color: #f2f2f2;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
-  padding-right: 73px;
-  justify-content: flex-end;
+  margin: 0;
+  margin-top: 47px;
 
 }
 
-/*расположить звезды горизонтально*/
+.stars-rating {
+  text-align: end;
+  padding-top: 29px;
+}
+
 .stars-rating span {
+  display: inline-block;
   background: url("../img/star.svg");
   width: 18px;
   height: 17px;
@@ -1197,6 +1244,7 @@ a.arrow {
 
 .hotels-link {
   list-style: none;
+  margin: 0;
 }
 
 .hotels-link a {
