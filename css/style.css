@@ -867,154 +867,220 @@ input[type="radio"].visually-hidden {
 }
 
 .filters-form {
-
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: row;
-  align-items: center;
+  /*align-items: center;*/
+  box-sizing: border-box;
+  height: 217px;
 }
 
-.first-part-filters {
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center; /*!! Не отцентрировалось!*/
-  flex-direction: row;
-  width: 600px;
-
-
+.filter-section.first {
+  margin-left: 111px;
 }
 
-.filter-infrastructure {
-  position: relative;
-  margin: 0 auto;
-  width: 300px;
-
+.filter-section.second {
+  margin-left: 155px;
 }
 
-.filter-infrastructure h3 {
+.filter-heading {
   font-size: 16px;
   line-height: 21px;
   font-weight: 700;
+  margin-top: 31px;
+  margin-bottom: 30px;
+  margin-left: -39px;
 }
 
-.filter-infrastructure-list {
+.filter-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.filter-accommodation {
-  position: relative;
-  margin: 0 auto;
-  width: 300px;
-}
-
-.filter-accommodation-list {
-  list-style: none;
-}
-
-.filter-accommodation .filter-infrastructure-list {
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-}
-
-.filter-cost {
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-  width: 600px;
-}
-
-.filter-cost h3 {
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 700;
-}
-
-.button-show-hotels {
-  border: 2px solid #ffffff;
-  font-size: 14px;
-  line-height: 21px;
-  font-weight: 400;
-  text-transform: uppercase;
-
-  color: #ffffff;
-  background: transparent;
-  width: 133px;
-  height: 32px;
-
-}
-
-.button-show-hotels:focus,
-.button-show-hotels:hover {
-  background: #fff;
-  color: #000
-}
-
-/* Customize the label (the checkbox) */
-.checkbox {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  line-height: 21px;
-  font-weight: 400;
-}
-
-/*Hide the browser's default checkbox */
-.checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 23px;
-  width: 23px;
-  background: transparent;
-  border: solid white;
-
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
+/* Стилизация чекбоксов */
+.filter-list input[type="checkbox"] {
   display: none;
 }
 
-/* Show the checkmark when checked */
-.checkbox input:checked ~ .checkmark:after {
+.checkbox-label {
+
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox-label:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  margin-left: -39px;
+  padding-right: 10px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-image: url("../img/checkbox-off.png");
+
+}
+
+.filter-list input[type="checkbox"]:checked ~ label:before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  background-color: transparent;
+  background-image: url("../img/checkbox-on.png");
+  background-repeat: no-repeat;
+}
+
+.filter-list li {
+  margin-bottom: 23px;
+
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*Стоимость в сутки!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11*/
+
+
+.filter-range {
+  width: 314px;
+  margin-top: 31px;
+  margin-left: 365px;
+
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.filter-range-title {
+  margin-bottom: 13px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.price-controls {
+  position: relative;
+
+  height: 32px;
+  margin-bottom: 22px;
+
+  font-size: 0;
+
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+
+.price-controls::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 2px;
+  height: 22px;
+
+  background: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.price-controls label {
+  display: inline-block;
+
+  font-size: 14px;
+  line-height: 32px;
+  vertical-align: top;
+
+  cursor: pointer;
+}
+
+.price-controls .min-price,
+.price-controls .max-price {
+  width: 90px;
+  padding-left: 65px;
+}
+
+.price-controls input {
+  width: 50px;
+  margin: 0;
+
+  color: inherit;
+  font: inherit;
+
+  background: none;
+  border: none;
+}
+
+.range-controls {
+  position: relative;
+
+  margin-bottom: 32px;
+}
+
+.range-controls .scale {
+  height: 2px;
+
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.range-controls .bar {
+  width: 80%;
+  height: 2px;
+
+  background: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+  top: -9px;
+
+  width: 4px;
+  height: 4px;
+
+  background: #ababab;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  background: #1c4f80;
+  width: 5px;
+  height: 5px;
+}
+
+.range-toggle-min {
+  left: 0;
+}
+
+.range-toggle-max {
+  left: 80%;
+}
+
+.btn-transparent {
   display: block;
+  margin: 0 auto;
+  padding: 6px 35px;
+
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-/* Style the checkmark/indicator */
-.checkbox .checkmark:after {
-  left: 10px;
-  top: -4px;
-  width: 7px;
-  height: 20px;
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+.btn-transparent:hover {
+  color: #000000;
+
+  background: #ffffff;
 }
 
-/* Вопрос: или здесь в sort-results сделать два больших блока? в первой половине текст, во второй в конце треугольники?*/
+
+/**/
+
 
 .sort-results {
   display: flex;
