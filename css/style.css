@@ -88,16 +88,17 @@ input[type="radio"].visually-hidden {
   padding: 0;
   width: 100%;
   /*Вопрос: при переполнении текста такая ширина ведь не подойдет?*/
+  /*width: 1200px*/
 }
 
 .site-navigation > li {
-  width: 20%; /*задать max-width ?*/
+  width: 20%; /*задать max-width max-width:240px?*/
   text-align: center;
   line-height: 56px;
 }
 
 .site-navigation > li:nth-child(2) {
-  margin-right: 20%;
+  margin-right: 20%; /* margin-right: 240px;*/
 }
 
 .site-navigation a:hover,
@@ -909,7 +910,7 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.checkbox-label:before {
+.checkbox-input + label::before {
   content: "";
   position: absolute;
   width: 23px;
@@ -922,11 +923,13 @@ input[type="radio"].visually-hidden {
 
 }
 
-.filter-list input[type="checkbox"]:checked ~ label:before {
+.checkbox-input:checked + label::before {
   content: "";
   position: absolute;
   width: 23px;
   height: 23px;
+  margin-left: -39px;
+  padding-right: 10px;
   background-color: transparent;
   background-image: url("../img/checkbox-on.png");
   background-repeat: no-repeat;
