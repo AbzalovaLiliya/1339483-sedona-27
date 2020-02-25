@@ -1,15 +1,21 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   min-width: 1200px;
   margin: 0;
   padding: 0;
-
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
-
   background-color: #f2f2f2;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
@@ -20,18 +26,12 @@ a {
 
 img {
   max-width: 100%;
-  height: auto;
-}
-
-* {
-  box-sixing: border-box;
 }
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
 input[type="radio"].visually-hidden {
   position: absolute;
-
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -47,23 +47,18 @@ input[type="radio"].visually-hidden {
   width: 1200px;
   margin: 0 auto;
   box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
-  background-color: rgba(0, 0, 0, 0);
 }
 
 .main-header {
   position: relative;
   width: 1200px;
-  height: 56px;
+  min-height: 56px;
   margin: 0 auto;
   color: #000000;
   background-color: #ffffff;
 }
 
 .main-navigation {
-  display: flex;
-  flex-direction: column; /*Вопрос: как это влияет на положение логотипа*/
-  align-items: center;
-
   font-size: 14px;
   line-height: 26px;
   color: #000000;
@@ -87,18 +82,17 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
   width: 100%;
-  /*Вопрос: при переполнении текста такая ширина ведь не подойдет?*/
-  /*width: 1200px*/
 }
 
 .site-navigation > li {
-  width: 20%; /*задать max-width max-width:240px?*/
+  width: 20%;
+  max-width: 240px;
   text-align: center;
   line-height: 56px;
 }
 
 .site-navigation > li:nth-child(2) {
-  margin-right: 20%; /* margin-right: 240px;*/
+  margin-right: 20%;
 }
 
 .site-navigation a:hover,
@@ -125,13 +119,8 @@ input[type="radio"].visually-hidden {
   background-color: #f2f2f2;
   background-image: url("../img/background-photo.jpg");
   background-position: top center;
-}
-
-.welcome-image {
-  position: relative; /*по сути .intro-welcome:before лежит в .intro-welcome который relative, а нужно ли здесь делать position?*/
-  left: 50%;
-  margin-left: -229.5px;
-  margin-top: 77px;
+  text-align: center;
+  padding-top: 76px;
 }
 
 .intro-welcome:before {
@@ -139,50 +128,42 @@ input[type="radio"].visually-hidden {
   position: absolute;
   width: 1200px;
   height: 59px;
-  background: transparent;
   background-image: url("../img/intro-mask.svg");
   bottom: -2px;
+  left: 0;
 }
 
 .intro {
   width: 1200px;
-  height: 216px;
+  min-height: 216px;
   background-color: #ffffff;
   text-align: center;
-  /*margin-left: auto;
-   margin-right: auto;*/
-  /* Вопрос: это не дает никакого результата потому что в .container margin 0 auto */
+  padding-top: 61px;
+  padding-bottom: 48px;
+  margin: 0;
 }
 
 .intro-heading {
-  display: block;
-  width: 440px;
-  height: 48px;
   font-size: 21px;
   line-height: 26px;
   color: #000000;
   margin: 0;
-  padding-top: 61px;
   padding-left: 380px;
   padding-right: 380px;
 }
 
 .intro-subheading {
-  display: block;
-  width: 489px;
-  height: 13px;
   font-size: 14px;
+  line-height: 26px;
   font-weight: 400;
   color: #333333;
   margin: 0;
-  padding-top: 38px;
-  padding-left: 355px;
-  padding-right: 356px;
+  padding-top: 26px;
 }
 
 .features {
-  width: auto;
-  margin: 0 auto;
+  /* width: auto;
+   margin: 0 auto;*/
 }
 
 .features-list {
@@ -195,15 +176,13 @@ input[type="radio"].visually-hidden {
 
 .feature-item {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;
   margin: 0;
-  padding: 0;
-
+  padding: 0;*/
   text-align: center;
   text-transform: uppercase;
   color: #000000;
   background-color: #ffffff;
-
 }
 
 .feature-item img {
@@ -222,147 +201,74 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
 }
 
-.features-item-block {
+.feature-item-blue {
   width: 400px;
-  height: 256px;
-  box-sizing: border-box;
-}
-
-.feature-item-city {
+  padding-top: 46px;
+  padding-bottom: 64px;
+  padding-left: 49px;
+  padding-right: 49px;
   color: #ffffff;
   background-color: #81b3d2;
-  padding-top: 46px;
+}
+
+.feature-item-blue h3 {
+  margin: 0;
   padding-left: 60px;
   padding-right: 60px;
-  padding-bottom: 64px;
 }
 
-.features-item-habitation {
-  height: 337px;
+.feature-item-blue p {
+  margin: 0;
+  padding-top: 20px;
+}
+
+.features-item-white {
   width: 400px;
-}
-
-.features-item-habitation img {
+  text-align: center;
   padding-top: 60px;
-  padding-left: 162px;
-  padding-right: 163px;
+  padding-bottom: 81px;
 }
 
-.features-item-habitation h3 {
-  padding-top: 29px;
-  padding-left: 165px;
-  padding-right: 168px;
+.features-item-white h3 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.features-item-white img {
+  display: inline;
+}
+
+.features-item-white p {
   margin: 0;
+  padding-left: 57px;
+  padding-right: 57px;
 }
 
-.features-item-habitation p {
-  width: 252px;
-  height: 34px;
-  padding-top: 31px;
-  padding-left: 73px;
-  padding-right: 75px;
-  padding-bottom: 85px;
-  margin: 0;
-}
-
-.features-item-food {
-  height: 337px;
+.features-item-gray {
   width: 400px;
-}
-
-.features-item-food img {
-  padding-top: 62px;
-  padding-left: 163px;
-  padding-right: 163px;
-}
-
-.features-item-food h3 {
-  padding-top: 32px;
-  padding-left: 181px;
-  padding-right: 181px;
-  margin: 0;
-}
-
-.features-item-food p {
-  width: 284px;
-  height: 35px;
-  padding-top: 26px;
-  padding-left: 58px;
-  margin: 0;
-}
-
-.features-item-souvenir {
-  height: 337px;
-  width: 400px;
-}
-
-.features-item-souvenir img {
-  padding-top: 56px;
-  padding-right: 168px;
-  padding-left: 168px;
-}
-
-.features-item-souvenir h3 {
-  padding-top: 32px;
-  padding-left: 149px;
-  padding-right: 149px;
-  margin: 0;
-}
-
-.features-item-souvenir p {
-  width: 273px;
-  height: 36px;
-  padding-top: 28px;
-  padding-left: 64px;
-  padding-right: 63px;
-  margin: 0;
-}
-
-.feature-item-devil {
-  color: #ffffff;
-  background-color: #81b3d2;
-  padding-top: 49px;
-  padding-left: 48px;
-  padding-right: 49px;
-  padding-bottom: 65px;
-}
-
-.feature-item-gray {
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 64px;
   background-color: #eeeeee;
 }
 
-.feature-item-gray h3 {
-  display: block;
-  width: 120px;
-  margin: auto;
+.features-item-gray h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  margin-left: 130px;
+  margin-right: 130px;
 }
 
-.features-item-area {
-
-  padding-top: 50px;
-  padding-left: 95px;
-  padding-right: 97px;
-  padding-bottom: 63px;
-}
-
-.features-item-road {
-
-  padding-top: 50px;
+.features-item-gray p {
+  margin: 0;
+  padding-top: 25px;
   padding-left: 69px;
   padding-right: 69px;
-  padding-bottom: 64px;
-}
-
-.features-item-tourist {
-  padding-top: 50px;
-  padding-left: 77px;
-  padding-right: 76px;
-  padding-bottom: 64px;
 }
 
 .interested-in {
   width: 100%;
-  height: 291px;
+  min-height: 291px;
   text-align: center;
   text-transform: uppercase;
   color: #000000;
@@ -387,7 +293,6 @@ input[type="radio"].visually-hidden {
   padding-right: 382px;
   padding-bottom: 52px;
   margin: 0;
-
 }
 
 .search {
@@ -405,6 +310,7 @@ input[type="radio"].visually-hidden {
   border: none;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 
 .button-brown:hover,
@@ -424,13 +330,11 @@ input[type="radio"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
-  width: 458px;
-  height: 58px;
   border: none;
-
-  margin-top: 54px;
-  margin-left: 55px;
-
+  cursor: pointer;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .button-blue:hover,
@@ -445,35 +349,31 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form {
-  color: #000000;
-  background-color: #ffffff;
   position: absolute;
   width: 568px;
   height: 395px;
+  color: #000000;
+  background-color: #ffffff;
   box-shadow: 0 7px 15px rgba(0, 1, 1, 0.15);
   left: 50%;
   margin-left: -284px;
   top: 100%;
+  padding: 55px;
 }
 
 
 .search-form-control {
   display: flex;
   position: relative;
+  margin-bottom: 30px;
+  align-items: baseline;
 }
 
 .search-form-control input {
-  box-sizing: border-box;
   height: 38px;
   width: 346px;
-
-  padding-top: 8px;
   padding-left: 15px;
   padding-right: 39px;
-  padding-bottom: 7px;
-
-  margin-top: 55px;
-  margin-left: 21px;
   background: #f2f2f2;
   font: inherit;
   border: #000000;
@@ -495,183 +395,82 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form-control label {
-  width: 91px;
-  height: 12px;
-  font-family: "PT Sans", sans-serif;
+  width: 112px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
-  padding-top: 61px;
-  padding-left: 55px;
 }
-
-.test-calendar {
-  width: 21px;
-  height: 22px;
-  background-color: transparent;
-  background-image: url("../img/calendar.svg");
-  border: none;
-  outline: none;
-  position: absolute;
-  right: 64px;
-  top: 63px;
-}
-
-.test-calendar:hover path,
-.test-calendar:focus path {
-  fill: #000000;
-}
-
-.test-calendar:active path {
-  fill: #88b7d5;
-}
-
 
 .search-form-button-calendar {
   display: block;
   content: "";
   width: 21px;
   height: 22px;
-  background-image: url("../img/calendar.png");
-  /* background-image: url("../img/calendar.svg");*/
   background-color: transparent;
   border: none;
   outline: none;
   position: absolute;
-  right: 64px;
-  top: 63px;
-
-
+  cursor: pointer;
+  top: 9px;
+  right: 8px;
 }
 
-/*!!Это не работает пока картинка не будет в норм формате экспортирована*/
-/*как поменять цвет если картинка экспортирована как две картинки в одной?*/
-/*.search-form-button-calendar:hover path,
-.search-form-button-calendar:focus path {
+.search-form-button-calendar svg:hover,
+.search-form-button-calendar svg:focus {
   fill: #000000;
 }
-.search-form-button-calendar:active path {
-  fill: #88b7d5;
-}*/
-.search-form-button-calendar:hover,
-.search-form-button-calendar:focus {
-  background-image: url("../img/calendar-black.png");
-}
 
-.search-form-button-calendar:active {
-  background-image: url("../img/calendar-blue.png");
-}
-
-.search-form-control.leave input {
-  margin-top: 29px;
-  margin-left: 21px;
-}
-
-.search-form-control.leave label {
-  padding-top: 36px;
-  padding-left: 55px;
-}
-
-.search-form-control.leave button { /*почему не срабатывает .search-form-control.leave  .search-form-button-calendar ??*/
-  display: block;
-  content: "";
-  width: 21px;
-  height: 22px;
-  background-image: url("../img/calendar.png");
-  /* background-image: url("../img/calendar.svg");*/
-  background-color: transparent;
-  border: none;
-
-  position: absolute;
-  right: 64px;
-  top: 37px;
-}
-
-/*!!Это не работает пока картинка не будет в норм формате экспортирована*/
-/*.search-form-control.leave button:hover path {
-  fill: #000000;
-}
-.search-form-control.leave button:active path {
-  fill: #88b7d5;
-}*/
-.search-form-control.leave button:hover,
-.search-form-control.leave button:focus {
-  background-image: url("../img/calendar-black.png");
-}
-
-.search-form-control.leave button:active {
-  background-image: url("../img/calendar-blue.png");
+.search-form-button-calendar svg:active {
+  fill: #81b3d2;
 }
 
 .search-form-grid {
   display: flex;
-  margin-top: 30px;
-  height: 38px;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
 }
 
 .search-form-control-half {
   width: 50%;
-  margin-bottom: 20px;
   display: flex;
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
+  margin: 0;
+  padding: 0;
 }
 
 .search-form-control-half label {
-  padding-left: 55px;
-  padding-right: 41px;
+  width: 112px;
 }
 
 .search-form-control-half button {
   padding-left: 55px;
   padding-right: 41px;
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
   color: #a9a9a9;
 }
 
 .search-form-control-half button:hover {
   color: #000000;
-
 }
 
 .search-form-control-half button:active {
   color: #88b7d5;
 }
 
-
 .search-form-control-half-child {
-  width: 50%;
-  margin-bottom: 20px;
   display: flex;
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
+  width: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 .search-form-control-half-child label {
-
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
-
-  padding-left: 53px;
-  padding-right: 27px;
+  width: 118px;
 }
 
 .search-form-control-half-child button {
   padding-left: 55px;
   padding-right: 41px;
-  font-family: "PT Sans", sans-serif;
-  font-size: 14px;
-  line-height: 26px;
-  font-weight: 700;
   color: #a9a9a9;
   outline: none;
 }
@@ -691,7 +490,6 @@ input[type="radio"].visually-hidden {
   display: flex;
 }
 
-/*КАк попдобрать + и - такими же как на макете? моэет картинками вставить?*/
 .search-form-count button {
   width: 38px;
   height: 38px;
@@ -821,7 +619,7 @@ input[type="radio"].visually-hidden {
 
 .footer-copyright b {
   padding-right: 8px;
-  padding-top: 54px;
+  padding-top: 47px;
 }
 
 .footer-copyright .button {
@@ -850,12 +648,9 @@ input[type="radio"].visually-hidden {
   color: #766357;
 }
 
-
 .search-section {
-
   width: 1200px;
   height: 217px;
-
   background-color: #766357;
   background-image: url("../img/filter-background.jpg");
   background-position: top center;
@@ -905,7 +700,6 @@ input[type="radio"].visually-hidden {
 }
 
 .checkbox-label {
-
   position: relative;
   cursor: pointer;
 }
@@ -920,7 +714,6 @@ input[type="radio"].visually-hidden {
   background-repeat: no-repeat;
   background-color: transparent;
   background-image: url("../img/checkbox-off.png");
-
 }
 
 .checkbox-input:checked + label::before {
@@ -940,21 +733,17 @@ input[type="radio"].visually-hidden {
 
 }
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*Стоимость в сутки!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11*/
-
-
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*Стоимость в сутки!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .filter-range {
   width: 314px;
   margin-top: 31px;
   margin-left: 365px;
-
   color: #ffffff;
   text-transform: uppercase;
 }
 
 .filter-range-title {
   margin-bottom: 13px;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
@@ -962,12 +751,9 @@ input[type="radio"].visually-hidden {
 
 .price-controls {
   position: relative;
-
   height: 32px;
   margin-bottom: 22px;
-
   font-size: 0;
-
   border: 2px solid #ffffff;
   border-radius: 2px;
 }
@@ -977,21 +763,17 @@ input[type="radio"].visually-hidden {
   position: absolute;
   top: 50%;
   left: 50%;
-
   width: 2px;
   height: 22px;
-
   background: #ffffff;
   transform: translate(-50%, -50%);
 }
 
 .price-controls label {
   display: inline-block;
-
   font-size: 14px;
   line-height: 32px;
   vertical-align: top;
-
   cursor: pointer;
 }
 
@@ -1004,40 +786,33 @@ input[type="radio"].visually-hidden {
 .price-controls input {
   width: 50px;
   margin: 0;
-
   color: inherit;
   font: inherit;
-
   background: none;
   border: none;
 }
 
 .range-controls {
   position: relative;
-
   margin-bottom: 32px;
 }
 
 .range-controls .scale {
   height: 2px;
-
   background: rgba(255, 255, 255, 0.3);
 }
 
 .range-controls .bar {
   width: 80%;
   height: 2px;
-
   background: #ffffff;
 }
 
 .range-toggle {
   position: absolute;
   top: -9px;
-
   width: 4px;
   height: 4px;
-
   background: #ababab;
   border: 8px solid #ffffff;
   border-radius: 50%;
@@ -1063,12 +838,10 @@ input[type="radio"].visually-hidden {
   display: block;
   margin: 0 auto;
   padding: 6px 35px;
-
   font-size: 14px;
   line-height: 20px;
   color: #ffffff;
   text-transform: uppercase;
-
   background: transparent;
   border: 2px solid #ffffff;
   border-radius: 2px;
@@ -1077,13 +850,8 @@ input[type="radio"].visually-hidden {
 
 .btn-transparent:hover {
   color: #000000;
-
   background: #ffffff;
 }
-
-
-/**/
-
 
 .sort-results {
   display: flex;
@@ -1102,7 +870,6 @@ input[type="radio"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
-
   margin: 0;
   padding-left: 72px;
   padding-top: 31px;
@@ -1217,7 +984,6 @@ input[type="radio"].visually-hidden {
 }
 
 .button-booking {
-
   color: #ffffff;
   background-color: #766357;
   font-size: 14px;
@@ -1231,7 +997,6 @@ input[type="radio"].visually-hidden {
 .find-results {
   color: #000000;
   background-color: #fefefe;
-
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
@@ -1251,7 +1016,6 @@ input[type="radio"].visually-hidden {
   padding-left: 72px;
 }
 
-
 .hotel-description {
   margin-left: 30px;
   margin-top: 30px;
@@ -1266,7 +1030,6 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
 }
 
-
 .hotels-image {
   width: 135px;
   height: 90px;
@@ -1274,14 +1037,12 @@ input[type="radio"].visually-hidden {
   padding: 0;
 }
 
-
 .rating-section {
   display: flex;
   flex-direction: column;
   margin: 0;
   margin-left: 522px;
   padding: 0;
-
 }
 
 .rating {
@@ -1295,7 +1056,6 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   margin: 0;
   margin-top: 47px;
-
 }
 
 .stars-rating {
@@ -1309,7 +1069,6 @@ input[type="radio"].visually-hidden {
   width: 18px;
   height: 17px;
 }
-
 
 .hotels-link {
   list-style: none;
