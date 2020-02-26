@@ -247,23 +247,23 @@ input[type="radio"].visually-hidden {
 .features-item-gray {
   width: 400px;
   text-align: center;
-  padding-top: 50px;
-  padding-bottom: 64px;
+  padding-top: 47px;
+  padding-bottom: 59px;
   background-color: #eeeeee;
 }
 
 .features-item-gray h3 {
   margin-top: 0;
   margin-bottom: 25px;
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 127px;
+  margin-right: 126px;
 }
 
 .features-item-gray p {
   margin: 0;
-  padding-top: 25px;
-  padding-left: 69px;
-  padding-right: 69px;
+  padding-top: 20px;
+  padding-left: 65px;
+  padding-right: 65px;
 }
 
 .interested-in {
@@ -279,7 +279,7 @@ input[type="radio"].visually-hidden {
   font-size: 30px;
   line-height: 36px;
   margin: 0;
-  padding-top: 57px;
+  padding-top: 50px;
   padding-left: 383px;
   padding-right: 383px;
 }
@@ -288,10 +288,10 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  padding-top: 12px;
+  padding-top: 24px;
   padding-left: 383px;
   padding-right: 382px;
-  padding-bottom: 52px;
+  padding-bottom: 47px;
   margin: 0;
 }
 
@@ -305,6 +305,7 @@ input[type="radio"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+  text-transform: uppercase;
   width: 568px;
   height: 86px;
   border: none;
@@ -330,10 +331,12 @@ input[type="radio"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+  text-transform: uppercase;
   border: none;
   cursor: pointer;
   width: 100%;
-  padding-top: 20px;
+  height: 58px;
+  padding-top: 15px;
   padding-bottom: 20px;
 }
 
@@ -399,6 +402,7 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
+  padding-right: 20px;
 }
 
 .search-form-button-calendar {
@@ -411,8 +415,8 @@ input[type="radio"].visually-hidden {
   outline: none;
   position: absolute;
   cursor: pointer;
-  top: 9px;
-  right: 8px;
+  top: 7px;
+  right: 14px;
 }
 
 .search-form-button-calendar svg:hover,
@@ -429,7 +433,7 @@ input[type="radio"].visually-hidden {
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 54px;
 }
 
 .search-form-control-half {
@@ -441,6 +445,8 @@ input[type="radio"].visually-hidden {
 
 .search-form-control-half label {
   width: 112px;
+  padding-top: 5px;
+  padding-right: 39px;
 }
 
 .search-form-control-half button {
@@ -466,6 +472,8 @@ input[type="radio"].visually-hidden {
 
 .search-form-control-half-child label {
   width: 118px;
+  padding-top: 5px;
+  padding-left: 26px;
 }
 
 .search-form-control-half-child button {
@@ -545,13 +553,13 @@ input[type="radio"].visually-hidden {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 32px;
 }
 
 .footer-contacts {
   width: 400px;
   margin: 0;
-  padding-top: 36px;
-  padding-left: 132px;
+  padding-left: 124px;
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
@@ -559,11 +567,11 @@ input[type="radio"].visually-hidden {
 
 .footer-contacts h4 {
   margin: 0;
-  padding-bottom: 16px;
 }
 
 .footer-contacts p {
   margin: 0;
+  padding-top: 5px;
 }
 
 .footer-social {
@@ -576,7 +584,7 @@ input[type="radio"].visually-hidden {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 141px;
+  width: 149px;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -607,8 +615,6 @@ input[type="radio"].visually-hidden {
 .footer-copyright {
   display: flex;
   width: 400px;
-  margin: 0;
-  margin-top: -25px;
   padding: 0;
   padding-left: 101px;
   text-align: center;
@@ -618,18 +624,18 @@ input[type="radio"].visually-hidden {
 }
 
 .footer-copyright b {
-  padding-right: 8px;
-  padding-top: 47px;
+  padding-left: 2px;
+  padding-top: 7px;
 }
 
 .footer-copyright .button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 115px;
-  height: 41px;
+  width: 123px;
+  height: 44px;
   margin: 0;
-  margin-top: 39px;
+  padding-left: 7px;
   background-color: transparent;
 }
 
