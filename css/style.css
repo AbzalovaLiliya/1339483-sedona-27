@@ -51,7 +51,6 @@ input[type="radio"].visually-hidden {
 
 .main-header {
   position: relative;
-  width: 1200px;
   min-height: 56px;
   margin: 0 auto;
   color: #000000;
@@ -161,11 +160,6 @@ input[type="radio"].visually-hidden {
   padding-top: 26px;
 }
 
-.features {
-  /* width: auto;
-   margin: 0 auto;*/
-}
-
 .features-list {
   display: flex;
   flex-direction: column;
@@ -176,9 +170,6 @@ input[type="radio"].visually-hidden {
 
 .feature-item {
   display: flex;
-  /*justify-content: space-between;
-  margin: 0;
-  padding: 0;*/
   text-align: center;
   text-transform: uppercase;
   color: #000000;
@@ -363,7 +354,6 @@ input[type="radio"].visually-hidden {
   padding: 55px;
 }
 
-
 .search-form-control {
   display: flex;
   position: relative;
@@ -534,10 +524,6 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 
-/*.modal-map {
-
-}*/
-
 .modal-map img {
   display: block;
 }
@@ -547,6 +533,12 @@ input[type="radio"].visually-hidden {
   background-color: #f9fbf6;
   height: 120px;
   width: 1200px;
+}
+
+.main-footer-home {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: -120px;
+  position: relative;
 }
 
 .footer-container {
@@ -647,9 +639,6 @@ input[type="radio"].visually-hidden {
 .footer-copyright svg:active path {
   fill: #cccccc;
 }
-
-
-/*hotels.html*/
 
 .nav-current {
   color: #766357;
@@ -783,15 +772,12 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.price-controls .min-price {
-  width: 97px;
+.price-controls .min-price,
+.price-controls .max-price {
+  width: 150px;
   padding-left: 63px;
 }
 
-.price-controls .max-price {
-  width: 97px;
-  padding-left: 114px;
-}
 
 .price-controls input {
   width: 50px;
@@ -976,7 +962,6 @@ input[type="radio"].visually-hidden {
   fill: #81b3d2;
 }
 
-
 .find-results {
   color: #000000;
   background-color: #fefefe;
@@ -1019,10 +1004,8 @@ input[type="radio"].visually-hidden {
   line-height: 15px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
   margin-bottom: 13px;
 }
-
 
 .hotels-inline-block {
   display: inline-block;
@@ -1032,11 +1015,10 @@ input[type="radio"].visually-hidden {
   margin-bottom: 14px;
 }
 
-/*.hotels-type {
+span.hotels-type {
+  min-width: 113px;
+  display: inline-block;
 }
-
-.hotels-price {
-}*/
 
 .button-inline-block {
   display: inline-block;
@@ -1098,7 +1080,6 @@ input[type="radio"].visually-hidden {
 
 .stars-rating {
   text-align: right;
-  letter-spacing: 1.5px;
   margin-bottom: 41px;
 }
 
@@ -1108,6 +1089,7 @@ input[type="radio"].visually-hidden {
   background: url("../img/star.svg");
   width: 18px;
   height: 17px;
+  margin-left: 1px;
 }
 
 .hotels-link {
