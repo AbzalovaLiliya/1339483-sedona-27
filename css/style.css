@@ -393,7 +393,7 @@ input[type="radio"].visually-hidden {
   }
 }
 
-.search-form-error{
+.search-form-error {
   animation: shake 0.6s;
 }
 
@@ -567,29 +567,33 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 
-/*
+
 .modal-map iframe {
   position: relative;
-  z-index: 2;
+  z-index: 5;
   border: none;
-}*/
+}
 
+/*
 .modal-map img {
   display: block;
   z-index: 0;
 }
+*/
 
 .main-footer {
   color: #000000;
   background-color: #f9fbf6;
   height: 120px;
   width: 1200px;
+  z-index: 10;
 }
 
 .main-footer-home {
   background-color: rgba(255, 255, 255, 0.9);
   margin-top: -120px;
   position: relative;
+
 }
 
 .footer-container {

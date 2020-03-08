@@ -46,28 +46,28 @@ form.addEventListener("submit", function (evt) {
 });
 
 
-adultsMinus.addEventListener("click", function(evt) {
+adultsMinus.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (adultsNumber.value > 1) {
     --adultsNumber.value;
   }
 });
 
-adultsPlus.addEventListener("click", function(evt) {
+adultsPlus.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (adultsNumber.value < 99) {
     ++adultsNumber.value;
   }
 });
 
-childrenMinus.addEventListener("click", function(evt) {
+childrenMinus.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (childrenNumber.value > 0) {
     --childrenNumber.value;
   }
 });
 
-childrenPlus.addEventListener("click", function(evt) {
+childrenPlus.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (childrenNumber.value < 99) {
     ++childrenNumber.value;
