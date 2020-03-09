@@ -748,12 +748,12 @@ input[type="radio"].visually-hidden {
   cursor: pointer;
 }
 
-.filter-list input[type="checkbox"] {
-  display: none;
-}
-
 .checkbox-label {
   cursor: pointer;
+}
+
+.checkbox-input:focus + label {
+  outline: #81b3d2 auto 5px;
 }
 
 .checkbox-input + label::before {
@@ -1050,7 +1050,7 @@ input[type="radio"].visually-hidden {
 
 .hotel-description {
   margin: 0;
-  margin-right: 522px;
+  margin-right: 328px;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -1062,6 +1062,8 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
   letter-spacing: 0.5px;
   margin-bottom: 13px;
+  width: 450px;
+  word-break: break-word;
 }
 
 .hotels-inline-block {
