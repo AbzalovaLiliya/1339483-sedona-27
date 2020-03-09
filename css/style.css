@@ -1058,10 +1058,11 @@ input[type="radio"].visually-hidden {
 
 .find-results h2 {
   font-size: 21px;
-  line-height: 15px;
+  line-height: 26px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin-bottom: 13px;
+  margin-bottom: 8px;
+  margin-top: -5px;
   width: 450px;
   word-break: break-word;
 }
