@@ -354,7 +354,7 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form {
-  display: none;
+  display: block;
   position: absolute;
   width: 568px;
   height: 395px;
@@ -365,10 +365,11 @@ input[type="radio"].visually-hidden {
   margin-left: -284px;
   top: 100%;
   padding: 55px;
+  z-index: 15;
 }
 
 .search-form-show {
-  display: block;
+  display: none;
 }
 
 @keyframes shake {
@@ -411,7 +412,7 @@ input[type="radio"].visually-hidden {
   padding-right: 39px;
   background: #f2f2f2;
   font: inherit;
-  border: #000000;
+  border: 1px solid transparent;
   cursor: pointer;
   font-size: 14px;
   line-height: 26px;
@@ -421,6 +422,7 @@ input[type="radio"].visually-hidden {
 
 .search-form-control input:hover {
   background: #ebebeb;
+  border: 1px solid transparent;
 }
 
 .search-form-control input:focus {
@@ -574,16 +576,17 @@ input[type="radio"].visually-hidden {
   border: none;
 }
 
-/*
-.modal-map img {
-  display: block;
-  z-index: 0;
+
+.modal-map {
+  width: 1200px;
+  height: 593px;
+  background-image: url("../img/map.png");
+  z-index: 1;
 }
-*/
 
 .main-footer {
   color: #000000;
-  background-color: #f9fbf6;
+  background-color: #fefefe;
   height: 120px;
   width: 1200px;
   z-index: 10;
@@ -875,8 +878,8 @@ input[type="radio"].visually-hidden {
 
 .range-toggle:hover {
   background: #1c4f80;
-  width: 5px;
-  height: 5px;
+  width: 22px;
+  height: 22px;
 }
 
 .range-toggle-min {

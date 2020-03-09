@@ -16,6 +16,8 @@ var childrenPlus = popup.querySelector(".children-plus");
 
 var isStorageSupport = !!window.localStorage;
 
+form.classList.add("search-form-show");
+
 link.addEventListener("click", function (evt) {
   evt.preventDefault();
   if (form.classList.contains("search-form-show")) {
@@ -23,13 +25,15 @@ link.addEventListener("click", function (evt) {
   } else {
     form.classList.add("search-form-show");
   }
-  if (isStorageSupport) {
+  if ((isStorageSupport) && (localStorage.getItem("adultsNumber") != null && localStorage.getItem("childrenNumber") != null)) {
     adultsNumber.value = localStorage.getItem("adultsNumber");
     childrenNumber.value = localStorage.getItem("childrenNumber");
+  } else {
+    adultsNumber.value = 2;
+    childrenNumber.value = 0;
   }
   arriveDate.focus();
 });
-
 
 form.addEventListener("submit", function (evt) {
   if (!arriveDate.value || !leaveDate.value || !adultsNumber.value || !childrenNumber.value) {
@@ -44,7 +48,6 @@ form.addEventListener("submit", function (evt) {
     }
   }
 });
-
 
 adultsMinus.addEventListener("click", function (evt) {
   evt.preventDefault();
