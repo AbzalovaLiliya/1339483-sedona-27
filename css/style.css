@@ -569,13 +569,11 @@ input[type="radio"].visually-hidden {
   text-align: center;
 }
 
-
 .modal-map iframe {
   position: relative;
   z-index: 5;
   border: none;
 }
-
 
 .modal-map {
   width: 1200px;
@@ -596,7 +594,6 @@ input[type="radio"].visually-hidden {
   background-color: rgba(255, 255, 255, 0.9);
   margin-top: -120px;
   position: relative;
-
 }
 
 .footer-container {
