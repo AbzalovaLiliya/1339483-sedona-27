@@ -78,11 +78,18 @@ input[type="radio"].visually-hidden {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 56px;
-  align-items: center;
+
+}
+
+.site-navigation:after {
+  content: '';
+  min-height: inherit;
+  font-size: 0;
 }
 
 .site-navigation > li {
@@ -447,7 +454,7 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form-control label {
-  width: 112px;
+  width: 115px;
   font-size: 14px;
   line-height: 26px;
   font-weight: 700;
