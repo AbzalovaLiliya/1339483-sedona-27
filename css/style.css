@@ -81,6 +81,8 @@ input[type="radio"].visually-hidden {
   margin: 0;
   padding: 0;
   width: 100%;
+  min-height: 56px;
+  align-items: center;
 }
 
 .site-navigation > li {
@@ -628,6 +630,7 @@ input[type="radio"].visually-hidden {
 
 .footer-contacts h4 {
   margin: 0;
+  margin-bottom: 4px;
 }
 
 .footer-contacts a {
@@ -735,7 +738,7 @@ input[type="radio"].visually-hidden {
   padding-top: 26px;
   padding-left: 72px;
   padding-right: 72px;
-  padding-bottom: 7px;
+  padding-bottom: 9px;
 }
 
 .filter-section.first {
@@ -751,7 +754,7 @@ input[type="radio"].visually-hidden {
   line-height: 21px;
   font-weight: 700;
   margin-top: 2px;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .filter-list {
@@ -810,7 +813,7 @@ input[type="radio"].visually-hidden {
 
 .filter-range-title {
   margin-top: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 11px;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
@@ -849,6 +852,7 @@ input[type="radio"].visually-hidden {
 .price-controls .max-price {
   width: 150px;
   padding-left: 63px;
+  padding-top: 5px;
 }
 
 
@@ -906,7 +910,7 @@ input[type="radio"].visually-hidden {
 .btn-transparent {
   display: block;
   margin-left: 84px;
-  padding: 6px 34px;
+  padding: 5px 34px;
   font-size: 14px;
   line-height: 21px;
   color: #ffffff;
@@ -1077,7 +1081,7 @@ input[type="radio"].visually-hidden {
   line-height: 26px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin-bottom: 8px;
+  margin-bottom: 7px;
   margin-top: -5px;
   width: 450px;
   word-break: break-word;
@@ -1121,7 +1125,7 @@ span.hotels-type {
   border: none;
   padding: 0;
   margin: 0;
-  margin-right: 3px;
+  margin-right: 6px;
 
   display: flex;
   justify-content: center;
@@ -1169,6 +1173,8 @@ span.hotels-type {
   font-weight: 400;
   margin: 0;
   padding: 0;
+  padding-left: 7px;
+  padding-top: 4px;
 }
 
 .stars-rating {
